@@ -13,7 +13,7 @@
 					<li>
 					 	<form method="post" action="{% url 'logout' %}">
     						{% csrf_token %}
-    							<button type="submit" class="nav-link bg-danger ms-2">Logout</button>
+    							<button type="submit" class="nav-link ms-2">Logout</button>
 						</form>
 					</li>
 				{% else %}
