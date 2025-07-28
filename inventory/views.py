@@ -2,9 +2,16 @@ from django.shortcuts import redirect, render
 from django.views.generic import TemplateView, View
 from inventory.forms import UserRegisterForm
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 
 class Index(TemplateView):
     template_name = 'inventory/index.html'
+
+
+class Dashboard(View):
+    def get(self, request):
+        return render(request, 'inventory/dashboard.html')
 
 class SignUpView(View):
     def get(self, request):
@@ -23,4 +30,4 @@ class SignUpView(View):
 
             login(request, user)
             return redirect ('index')
-        return render(request, 'inventory/signup.html', {'form': form})
+        return render(request, 'inventory/signup.html', {'form': form}) 
