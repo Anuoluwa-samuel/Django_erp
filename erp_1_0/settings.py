@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Erp_project',
         'USER': 'Ayomide',
-        'PASSWORD': '',  # If you have a password, add it here
+        'PASSWORD': 'password',  
         'HOST': 'localhost',
         'PORT': '3306',
     }
