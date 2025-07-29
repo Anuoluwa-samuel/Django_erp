@@ -1,3 +1,4 @@
+venv\Scripts\activate
 """
 Django settings for erp_1_0 project.
 
