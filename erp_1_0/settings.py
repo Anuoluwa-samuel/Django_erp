@@ -78,7 +78,7 @@ WSGI_APPLICATION = "erp_1_0.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'erp_db',
+        'NAME': 'erp_project',
         'USER': 'root',
         'PASSWORD': '',  # If you have a password, add it here
         'HOST': 'localhost',
