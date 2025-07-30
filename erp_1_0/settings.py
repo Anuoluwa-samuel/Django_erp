@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -74,6 +75,9 @@ TEMPLATES = [
         },
     },
 ]
+TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
