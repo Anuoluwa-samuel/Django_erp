@@ -62,7 +62,7 @@ def register_view(request):
             )
             messages.success(request, 'Account created successfully! You can now log in.')
 
-            login(request, user)
+            
             return redirect('login')
            
     else:
