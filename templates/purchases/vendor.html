@@ -1,0 +1,31 @@
+{% extends 'purchases/base_purchases.html' %}
+
+{% block title %}Vendors{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-6">🧾 Vendor List</h2>
+  <a href="{% url 'create_vendor' %}" class="bg-blue-600 text-white px-4 py-2 rounded mb-4 inline-block">+ Create Vendor</a>
+
+<table class="w-full border border-gray-300 table-auto">
+  <thead class="bg-gray-200">
+    <tr>
+      <th class="px-4 py-2 border">Vendor Name</th>
+      <th class="px-4 py-2 border">Contact Person</th>
+      <th class="px-4 py-2 border">Email</th>
+      <th class="px-4 py-2 border">Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for v in vendors %}
+      <tr class="border-t">
+        <td class="px-4 py-2 border">{{ v.name }}</td>
+        <td class="px-4 py-2 border">{{ v.contact_person }}</td>
+        <td class="px-4 py-2 border">{{ v.email }}</td>
+        <td class="px-4 py-2 border">{{ v.phone }}</td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="4" class="text-center py-4 text-gray-500">No vendors available.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
