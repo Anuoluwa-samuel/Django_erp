@@ -8,15 +8,15 @@ from django.contrib import messages
 
 
 
-def dashboard_view(request):
-    modules = [
-        {"name": "Inventory", "url": "/inventory/", "desc": "Manage product items"},
-        {"name": "Purchases", "url": "/purchases/", "desc": "Manage purchase orders"},
-        {"name": "HR", "url": "/hr/", "desc": "Human Resources"},
-        {"name": "Stock", "url": "/stock/", "desc": "Stock level tracking"},
-        {"name": "Accounting", "url": "/accounting/", "desc": "Financial operations"},
-    ]
-    return render(request, "dashboard.html", {"modules": modules})
+# def dashboard_view(request):
+#     modules = [
+#         {"name": "Inventory", "url": "/inventory/", "desc": "Manage product items"},
+#         {"name": "Purchases", "url": "/purchases/", "desc": "Manage purchase orders"},
+#         {"name": "HR", "url": "/hr/", "desc": "Human Resources"},
+#         {"name": "Stock", "url": "/stock/", "desc": "Stock level tracking"},
+#         {"name": "Accounting", "url": "/accounting/", "desc": "Financial operations"},
+#     ]
+#     return render(request, "dashboard.html", {"modules": modules})
 
 def login_view(request):
     if request.method == 'POST':
