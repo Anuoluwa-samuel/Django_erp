@@ -22,10 +22,10 @@
           <td class="px-4 py-2 border">{{ order.quantity }}</td>
           <td class="px-4 py-2 border">{{ order.staff.user.username }}</td>
           <td class="px-4 py-2 border">{{ order.status }}</td>
-          <!-- <td class="px-4 py-2 border">
+          <td class="px-4 py-2 border">
             <a href="{% url 'edit_order' order.id %}" class="text-yellow-600 hover:underline">Edit</a> |
             <a href="{% url 'delete_order' order.id %}" class="text-red-600 hover:underline">Delete</a>
-          </td> -->
+          </td>
         </tr>
       {% empty %}
         <tr><td colspan="5" class="text-center text-gray-500 py-4">No orders found.</td></tr>
