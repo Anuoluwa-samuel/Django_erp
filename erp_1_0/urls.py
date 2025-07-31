@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('dashboard.urls')),  # dashboard is homepage
     path('inventory/', include('inventory.urls')),
     path('purchases/', include('purchases.urls')),
+    path('', lambda request: redirect('login'), name='home'),
 ]
