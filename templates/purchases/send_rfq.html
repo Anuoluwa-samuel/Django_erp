@@ -10,7 +10,7 @@
 
     <label class="block mb-2 font-semibold">Select Material Request:</label>
     <select name="material_request" class="w-full border rounded mb-4 p-2">
-      {% for r in send_rfq %}
+      {% for r in requests %}
         <option value="{{ r.id }}">{{ r.item_name }} - {{ r.quantity }}</option>
       {% endfor %}
     </select>
