@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationReceived, PurchaseOrder
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib import messages
 
 # 📌 View 1: Create Purchase Request
@@ -121,3 +122,19 @@ def vendor_list(request):
     vendors = Vendor.objects.all()
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
 
+class VendorCreateView(CreateView):
+    model = Vendor
+    fields = ['name', 'contact_person', 'email', 'phone']
+    template_name = 'purchases/vendor_form.html'
+    success_url = reverse_lazy('vendor-list')
+
+class VendorUpdateView(UpdateView):
+    model = Vendor
+    fields = ['name', 'contact_person', 'email', 'phone']
+    template_name = 'purchases/vendor_form.html'
+    success_url = reverse_lazy('vendor-list')
+
+class VendorDeleteView(DeleteView):
+    model = Vendor
+    template_name = 'purchases/vendor_confirm_delete.html'
+    success_url = reverse_lazy('vendor-list')
