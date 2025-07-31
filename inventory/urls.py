@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import inventory_list, create_product, delete_product,edit_product, product_list, staff_list, order_list, create_order, create_staff, delete_staff, edit_staff
+
 urlpatterns = [
     path('', inventory_list, name='inventory_list'),
     path('add/', create_product, name='create_product'),
