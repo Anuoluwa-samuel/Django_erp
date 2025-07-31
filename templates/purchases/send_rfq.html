@@ -10,14 +10,14 @@
 
     <label class="block mb-2 font-semibold">Select Material Request:</label>
     <select name="material_request" class="w-full border rounded mb-4 p-2">
-      {% for r in material_requests %}
+      {% for r in send_rfq %}
         <option value="{{ r.id }}">{{ r.item_name }} - {{ r.quantity }}</option>
       {% endfor %}
     </select>
 
     <label class="block mb-2 font-semibold">Select Vendor:</label>
     <select name="vendor" class="w-full border rounded mb-4 p-2">
-      {% for v in vendors %}
+      {% for v in vendor %}
         <option value="{{ v.id }}">{{ v.name }}</option>
       {% endfor %}
     </select>
