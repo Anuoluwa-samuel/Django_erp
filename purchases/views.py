@@ -4,7 +4,7 @@ from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationRecei
 from django.contrib import messages
 
 
-# 📌 View 1: Create Purchase Request
+
 @login_required
 def create_purchase_request(request):
     if request.method == 'POST':
@@ -24,7 +24,6 @@ def create_purchase_request(request):
     return render(request, 'purchases/create_request.html')
 
 
-# 📌 View 2: Send RFQ
 @login_required
 def send_rfq(request):
     if request.method == 'POST':
@@ -52,7 +51,7 @@ def send_rfq(request):
     })
 
 
-# 📌 View 3: Quotation List
+
 @login_required
 def quotation_list(request):
     quotations = QuotationReceived.objects.select_related('rfq', 'rfq__material_request', 'rfq__vendor')
@@ -61,7 +60,6 @@ def quotation_list(request):
     })
 
 
-# 📌 View 4: Purchase Request List (sidebar link)
 @login_required
 def purchase_request_list(request):
     requests = RequestForMaterials.objects.all()
