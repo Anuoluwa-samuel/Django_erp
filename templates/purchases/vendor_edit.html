@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_purchases.html' %}
 {% block content %}
   <h2>{{ form.instance.id|yesno:"Edit Vendor,Create Vendor" }}</h2>
   
@@ -8,6 +8,6 @@
     <button type="submit" class="btn btn-primary">
       {% if form.instance.id %}Update{% else %}Create{% endif %}
     </button>
-    <a href="{% url 'vendor-list' %}" class="btn btn-secondary">Cancel</a>
+    <a href="{% url 'vendor' %}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}
