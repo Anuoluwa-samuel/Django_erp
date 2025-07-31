@@ -71,7 +71,7 @@ def register_view(request):
 
     return render(request, 'registration/register.html', {'form': form})
 
-class SignUpView(View):
+class signup_View(request):
     def get(self, request):
         form = UserRegisterForm()
         return render(request, 'inventory/signup.html', {'form': form})
