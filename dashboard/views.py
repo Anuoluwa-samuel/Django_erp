@@ -62,10 +62,9 @@ def register_view(request):
             )
             messages.success(request, 'Account created successfully! You can now log in.')
 
-            # Redirect to login page
+            login(request, user)
             return redirect('login')
-            # login(request, user)
-            # return redirect('dashboard')
+           
     else:
         form = CustomUserCreationForm()
 
