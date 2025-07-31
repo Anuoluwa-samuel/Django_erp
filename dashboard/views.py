@@ -73,7 +73,7 @@ def register_view(request):
 
 class signup_View(request):
     def get(self, request):
-        form = UserRegisterForm()
+        form = CustomUserCreationForm(request.POST)
         return render(request, 'inventory/signup.html', {'form': form})
 
     def post(self, request): 
