@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationReceived, PurchaseOrder, Vendor
 from django.contrib import messages
+from .forms import VendorForm
 
 # 📌 View 1: Create Purchase Request
 @login_required
