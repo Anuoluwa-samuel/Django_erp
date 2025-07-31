@@ -1,4 +1,4 @@
-{% extends 'inventory/base_inventory.html' %}
+{% extends 'inventory/base_purchases.html' %}
 {% block title %}Edit Staff{% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
   <input type="text" name="phone" value="{{ staff.phone }}" class="w-full p-2 mb-6 border rounded" required>
 
   <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">Update</button>
-  <a href="{% url 'staff_list' %}" class="ml-4 text-gray-500 hover:text-black">Cancel</a>
+  <a href="{% url 'vendor' %}" class="ml-4 text-gray-500 hover:text-black">Cancel</a>
 
 </form>
 {% endblock %}
