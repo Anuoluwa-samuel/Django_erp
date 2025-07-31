@@ -86,15 +86,15 @@ def submit_quotation(request):
 @login_required
 def create_vendor(request):
     if request.method == 'POST':
-        Vendor.objects.create(
-            name=request.POST['name'],
-            email=request.POST['email'],
-            phone=request.POST.get('phone', '')
-        )
-        messages.success(request, "Vendor created successfully.")
-        return redirect('create_vendor')
+        form = VendorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Vendor created successfully.")
+            return redirect('create_vendor')
+    else:
+        form = VendorForm()
 
-    return render(request, 'purchases/create_vendor.html')
+    return render(request, 'purchases/create_vendor.html', {'form': form})
 
 @login_required
 def approve_request(request, request_id):
