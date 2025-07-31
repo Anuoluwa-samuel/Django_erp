@@ -87,8 +87,8 @@ def is_admin(user):
 
 @user_passes_test(is_admin)
 def staff_list(request):
-    staff_members = Staff.objects.all()
-    return render(request, 'inventory/staff_list.html', {'staff': staff_members})
+    staff = Staff.objects.all()
+    return render(request, 'inventory/staff_list.html', {'staff': staff})
 
 @login_required
 def order_list(request):
