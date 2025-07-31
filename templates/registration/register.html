@@ -14,14 +14,14 @@
             <label class="block mb-2">{{ field.label }}</label>
         <input type="text" name="username" class="w-full border p-2 rounded mb-4">
 
-        </div>
+      
         
             {% if field.errors %}
                 <p class="text-red-500 text-sm">{{ field.errors.0 }}</p>
             {% endif %}
         
         {% endfor %}
-
+        </div>
         <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">Register</button>
     </form>
 </body>
