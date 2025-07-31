@@ -138,4 +138,4 @@ def vendor_list(request):
 #     if request.method == 'POST':
 #         vendor.delete()
 #         return redirect('vendor_delete')
-#     return render(request, 'purchases/vendor_delete.html', {'object': vendor})  I WAS STUCK DOING FIGURING THIS OUT MYSELF, AND I NEEDED TO SLEEP 
+#     return render(request, 'purchases/vendor_delete.html', {'object': vendor})
