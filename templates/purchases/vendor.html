@@ -24,8 +24,8 @@
         <td class="px-4 py-2 border">{{ v.email }}</td>
         <td class="px-4 py-2 border">{{ v.phone }}</td>
         <td>
-            <a href="{% url 'vendor-edit' vendor.id %}" class="btn btn-sm btn-warning">Edit</a>
-            <a href="{% url 'vendor-delete' vendor.id %}" class="btn btn-sm btn-danger">Delete</a>
+            <a href="{% url 'vendor_edit' vendor.id %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'vendor_delete' vendor.id %}" class="btn btn-sm btn-danger">Delete</a>
           </td>
       </tr>
     {% empty %}
