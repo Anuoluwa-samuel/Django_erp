@@ -6,7 +6,7 @@ from django.contrib import messages
 
 
 class Index(TemplateView):
-    template_name = 'inventory/dashboard.html'
+    template_name = 'dashboard.html'
 
 
 class Dashboard(View):
