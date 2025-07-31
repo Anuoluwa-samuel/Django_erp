@@ -122,20 +122,20 @@ def vendor_list(request):
     vendors = Vendor.objects.all()
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
 
-def edit_vendor(request, vendor_id):
-    vendor = get_object_or_404(Vendor, id=vendor_id)
-    if request.method == 'POST':
-        form = VendorForm(request.POST, instance=vendor)
-        if form.is_valid():
-            form.save()
-            return redirect('vendor_edit')
-    else:
-        form = VendorForm(instance=vendor)
-    return render(request, 'purchases/vendor_edit.html', {'form': form})
+# def edit_vendor(request, vendor_id):
+#     vendor = get_object_or_404(Vendor, id=vendor_id)
+#     if request.method == 'POST':
+#         form = VendorForm(request.POST, instance=vendor)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('vendor_edit')
+#     else:
+#         form = VendorForm(instance=vendor)
+#     return render(request, 'purchases/vendor_edit.html', {'form': form})
 
-def delete_vendor(request, vendor_id):
-    vendor = get_object_or_404(Vendor, id=vendor_id)
-    if request.method == 'POST':
-        vendor.delete()
-        return redirect('vendor_delete')
-    return render(request, 'purchases/vendor_delete.html', {'object': vendor})
+# def delete_vendor(request, vendor_id):
+#     vendor = get_object_or_404(Vendor, id=vendor_id)
+#     if request.method == 'POST':
+#         vendor.delete()
+#         return redirect('vendor_delete')
+#     return render(request, 'purchases/vendor_delete.html', {'object': vendor})
