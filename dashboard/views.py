@@ -71,9 +71,10 @@ def register_view(request):
 
     return render(request, 'registration/register.html', {'form': form})
 
-def signup_View(request):
+def signup_view(request):
         form = CustomUserCreationForm(request.POST)
         return render(request, 'inventory/signup.html', {'form': form})
+
         if form.is_valid():
             form.save()
             user = authenticate(
