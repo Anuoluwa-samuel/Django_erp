@@ -71,14 +71,9 @@ def register_view(request):
 
     return render(request, 'registration/register.html', {'form': form})
 
-class signup_View(request):
-    def get(self, request):
+def signup_View(request):
         form = CustomUserCreationForm(request.POST)
         return render(request, 'inventory/signup.html', {'form': form})
-
-    def post(self, request): 
-        form = UserRegisterForm(request.POST)
-        
         if form.is_valid():
             form.save()
             user = authenticate(
