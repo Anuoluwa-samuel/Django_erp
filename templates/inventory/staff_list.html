@@ -21,10 +21,10 @@
         <td class="px-4 py-2 border">{{ staff.role }}</td>
         <td class="px-4 py-2 border">{{ staff.phone }}</td>
         <td class="px-4 py-2 border">
-          <a href="{% url 'vendor_edit' v.id %}" class="text-green-600 hover:underline">Edit</a> |
-          <a href="{% url 'vendor_delete' v.id %}" class="text-red-600 hover:underline">Delete</a>
+          <a href="{% url 'edit_staff' staff.id %}" class="text-green-600 hover:underline">Edit</a> |
+          <a href="{% url 'delete_staff' staff.id %}" class="text-red-600 hover:underline">Delete</a>
 
-      </td>
+        </td>
       </tr>
     {% empty %}
       <tr>
