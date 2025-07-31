@@ -7,7 +7,6 @@ from django.contrib import messages
 
 
 
-# Create your views here.
 
 def dashboard_view(request):
     modules = [
