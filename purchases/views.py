@@ -123,19 +123,20 @@ def vendor_list(request):
     vendors = Vendor.objects.all()
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
 
-class VendorCreateView(CreateView):
-    model = Vendor
-    fields = ['name', 'contact_person', 'email', 'phone']
-    template_name = 'purchases/vendor_form.html'
-    success_url = reverse_lazy('vendor-list')
+def edit_vendor(request, vendor_id):
+    vendor = get_object_or_404(Vendor, id=vendor_id)
+    if request.method == 'POST':
+        form = VendorForm(request.POST, instance=vendor)
+        if form.is_valid():
+            form.save()
+            return redirect('vendor_list')
+    else:
+        form = VendorForm(instance=vendor)
+    return render(request, 'purchases/vendor_form.html', {'form': form})
 
-class VendorUpdateView(UpdateView):
-    model = Vendor
-    fields = ['name', 'contact_person', 'email', 'phone']
-    template_name = 'purchases/vendor_form.html'
-    success_url = reverse_lazy('vendor-list')
-
-class VendorDeleteView(DeleteView):
-    model = Vendor
-    template_name = 'purchases/vendor_confirm_delete.html'
-    success_url = reverse_lazy('vendor-list')
+def delete_vendor(request, vendor_id):
+    vendor = get_object_or_404(Vendor, id=vendor_id)
+    if request.method == 'POST':
+        vendor.delete()
+        return redirect('vendor_list')
+    return render(request, 'purchases/vendor_confirm_delete.html', {'object': vendor})
