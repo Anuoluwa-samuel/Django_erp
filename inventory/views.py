@@ -13,7 +13,6 @@ class Index(TemplateView):
     template_name = 'dashboard.html'
 
 
-
 class SignUpView(View):
     def get(self, request):
         form = UserRegisterForm()
