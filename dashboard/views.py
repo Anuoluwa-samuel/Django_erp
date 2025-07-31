@@ -57,8 +57,8 @@ def register_view(request):
             user.save()
             Staff.objects.create(
                 user=user,
-                role='Store Assistant',  # Default role (you can make it dynamic later)
-                phone='0000000000'       # You can add phone to the form if needed
+                role='Store Assistant', 
+                phone='0000000000'       
             )
             messages.success(request, 'Account created successfully! You can now log in.')
 
