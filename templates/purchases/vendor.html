@@ -23,9 +23,9 @@
         <td class="px-4 py-2 border">{{ v.contact_person }}</td>
         <td class="px-4 py-2 border">{{ v.email }}</td>
         <td class="px-4 py-2 border">{{ v.phone }}</td>
-        <td class="px-4 py-2 border">
-            <a href="{% url 'edit_order' order.id %}" class="text-yellow-600 hover:underline">Edit</a> |
-            <a href="{% url 'delete_order' order.id %}" class="text-red-600 hover:underline">Delete</a>
+        <td>
+            <a href="{% url 'vendor-edit' vendor.id %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'vendor-delete' vendor.id %}" class="btn btn-sm btn-danger">Delete</a>
           </td>
       </tr>
     {% empty %}
