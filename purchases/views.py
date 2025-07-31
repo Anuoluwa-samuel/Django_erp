@@ -120,3 +120,4 @@ def purchase_order_list(request):
 def vendor_list(request):
     vendors = Vendor.objects.all()
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
+
