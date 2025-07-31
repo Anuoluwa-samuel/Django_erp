@@ -13,9 +13,6 @@ class Index(TemplateView):
     template_name = 'dashboard.html'
 
 
-class Dashboard(View):
-    def get(self, request):
-        return render(request, 'inventory/dashboard.html')
 
 class SignUpView(View):
     def get(self, request):
