@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 
-
+@login_required
 class Index(TemplateView):
     template_name = 'dashboard.html'
 
