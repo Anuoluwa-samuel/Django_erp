@@ -132,11 +132,11 @@ def edit_vendor(request, vendor_id):
             return redirect('vendor_list')
     else:
         form = VendorForm(instance=vendor)
-    return render(request, 'purchases/vendor_form.html', {'form': form})
+    return render(request, 'purchases/vendor_edit.html', {'form': form})
 
 def delete_vendor(request, vendor_id):
     vendor = get_object_or_404(Vendor, id=vendor_id)
     if request.method == 'POST':
         vendor.delete()
         return redirect('vendor_list')
-    return render(request, 'purchases/vendor_confirm_delete.html', {'object': vendor})
+    return render(request, 'purchases/vendor_delete.html', {'object': vendor})
