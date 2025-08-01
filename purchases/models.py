@@ -68,3 +68,4 @@ class QuotationReceived(models.Model):
 
     def __str__(self):
         return f"{self.rfq.vendor.name} quote for {self.rfq.material_request.item_name}"
+
