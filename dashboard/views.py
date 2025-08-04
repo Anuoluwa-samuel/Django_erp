@@ -30,11 +30,11 @@ def dashboard_view(request):
     modules = [
         {"name": "Inventory", "url": "/inventory/", "desc": "Manage product items"},
         {"name": "Purchases", "url": "/purchases/", "desc": "Manage purchase orders"},
-        {"name": "HR", "url": "/hr/", "desc": "Human Resources"},
-        {"name": "Stock", "url": "/stock/", "desc": "Stock level tracking"},
-        {"name": "Accounting", "url": "/accounting/", "desc": "Financial operations"},
-        {"name": "CRM", "url": "/crm/", "desc": "Customer relationship tracking"},
-        {"name": "Sales", "url": "/sales/", "desc": "Sales order and invoice management"},
+        {"name": "HR", "url": "/#/", "desc": "Human Resources"},
+        {"name": "Stock", "url": "/#/", "desc": "Stock level tracking"},
+        {"name": "Accounting", "url": "/#/", "desc": "Financial operations"},
+        {"name": "CRM", "url": "/#/", "desc": "Customer relationship tracking"},
+        {"name": "Sales", "url": "/#/", "desc": "Sales order and invoice management"},
     ]
     return render(request, "dashboard.html", {"modules": modules})
 
