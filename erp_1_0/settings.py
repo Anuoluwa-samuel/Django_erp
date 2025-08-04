@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "dashboard",
     "purchases",
+    "CRM",
+    ""
 ]
 
 MIDDLEWARE = [
