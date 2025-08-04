@@ -48,7 +48,10 @@ INSTALLED_APPS = [
     "dashboard",
     "purchases",
     "CRM",
-    ""
+    "Accounting",
+    "HR",
+    "Sales",
+    "Stock",
 ]
 
 MIDDLEWARE = [
