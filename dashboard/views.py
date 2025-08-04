@@ -34,7 +34,7 @@ def dashboard_view(request):
         {"name": "Stock", "url": "/stock/", "desc": "Stock level tracking"},
         {"name": "Accounting", "url": "/accounting/", "desc": "Financial operations"},
         {"name": "CRM", "url": "/crm/", "desc": "Customer relationship tracking"},
-        {"name": "Sales", "url": "/sales/", "desc": "S"},
+        {"name": "Sales", "url": "/sales/", "desc": "Sales order and invoice management"},
     ]
     return render(request, "dashboard.html", {"modules": modules})
 
