@@ -33,8 +33,8 @@ def dashboard_view(request):
         {"name": "HR", "url": "/hr/", "desc": "Human Resources"},
         {"name": "Stock", "url": "/stock/", "desc": "Stock level tracking"},
         {"name": "Accounting", "url": "/accounting/", "desc": "Financial operations"},
-        {"name": "Accounting", "url": "/accounting/", "desc": "Financial operations"},
-        {"name": "Accounting", "url": "/accounting/", "desc": "Financial operations"},
+        {"name": "CRM", "url": "/crm/", "desc": "Financial operations"},
+        {"name": "Sales", "url": "/sales/", "desc": "Financial operations"},
     ]
     return render(request, "dashboard.html", {"modules": modules})
 
