@@ -23,11 +23,11 @@
         <td class="px-4 py-2 border">{{ v.contact_person }}</td>
         <td class="px-4 py-2 border">{{ v.email }}</td>
         <td class="px-4 py-2 border">{{ v.phone }}</td>
-        {% if request.user.userprofile.role == 'admin' %}
+        <!-- {% if request.user.userprofile.role == 'admin' %} -->
         <td class="px-4 py-2 border">
           <a href="{% url 'vendor_edit' v.id %}" class="text-green-600 hover:underline">Edit</a> |
           <a href="{% url 'vendor_delete' v.id %}" class="text-red-600 hover:underline">Delete</a>
-        {% endif %}
+        <!-- {% endif %} -->
       </td>
       </tr>
     {% empty %}
