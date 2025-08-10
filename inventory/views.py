@@ -123,11 +123,12 @@ def create_staff(request):
     if request.method == 'POST':
         user_id = request.POST.get('user')
         role = request.POST.get('role')
-        phone = request.POST.get('phone', '')  # FIXED HERE
+        phone = request.POST.get('phone', '')  # Fixed earlier
 
         if not user_id:
             messages.error(request, "Name is required.")
-            return render(request, 'purchases/create_staff.html')
+            users = User.objects.all()
+            return render(request, 'inventory/create_staff.html', {'users': users})
 
         Staff.objects.create(
             user_id=user_id,
@@ -137,8 +138,9 @@ def create_staff(request):
         messages.success(request, "Staff member added.")
         return redirect('staff_list')
 
-    return render(request, 'inventory/create_staff.html')
-
+    # Pass users here for GET request
+    users = User.objects.all()
+    return render(request, 'inventory/create_staff.html', {'users': users})
 @login_required
 def edit_staff(request, staff_id):
     staff = get_object_or_404(Staff, id=staff_id)
