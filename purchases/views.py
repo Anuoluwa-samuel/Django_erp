@@ -128,8 +128,10 @@ def edit_vendor(request, vendor_id):
 
     if request.method == 'POST':
             vendor.name = request.POST['Vendor name']
-            vendor.email = request.POST['contact_person']
+            vendor.contact_person = request.POST['contact_person']
             vendor.email = request.POST['email']
+            vendor.phone = request.POST['phone']
+            messages.success(request, "Vendor updated successfully.")
             return redirect('vendor_list' )
     else:
         form = VendorForm(instance=vendor)
