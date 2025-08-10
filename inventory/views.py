@@ -53,7 +53,7 @@ def create_product(request):
         messages.success(request, "Product added.")
         return redirect('product_list')
 
-    # i Pass all categories to the template so the form can show them
+    # i Passed all categories to the template so the form can show them
     categories = Category.objects.all()
     return render(request, 'inventory/create_product.html', {'categories': categories})
 
