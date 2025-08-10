@@ -125,11 +125,9 @@ def vendor_list(request):
 @login_required
 def edit_vendor(request, vendor_id):
     vendor = get_object_or_404(Vendor, id=vendor_id)
-    
+
     if request.method == 'POST':
-        form = VendorForm(request.POST, instance=vendor)
-        if form.is_valid():
-            form.save()
+            
             return redirect('vendor_list' )
     else:
         form = VendorForm(instance=vendor)
