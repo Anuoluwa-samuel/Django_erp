@@ -136,7 +136,6 @@ def edit_staff(request, staff_id):
     staff = get_object_or_404(Staff, id=staff_id)
 
     if request.method == 'POST':
-        staff.user = request.POST['username']
         staff.role = request.POST['role']
         staff.phone = request.POST['phone']
         staff.save()
