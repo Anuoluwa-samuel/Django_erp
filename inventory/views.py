@@ -42,20 +42,15 @@ def inventory_list(request):
 @login_required
 def create_product(request):
     if request.method == 'POST':
-        category_id = request.POST['category']
-        category = Category.objects.get(pk=category_id)
-
+        
         Product.objects.create(
             name=request.POST['name'],
-            category=category,
+            category=request.POST['category'],
             quantity=request.POST['quantity']
         )
         messages.success(request, "Product added.")
         return redirect('product_list')
-
-    # i Passed all categories to the template so the form can show them
-    categories = Category.objects.all()
-    return render(request, 'inventory/create_product.html', {'categories': categories})
+    return render(request, 'inventory/create_product.html')
 
 @login_required
 def edit_product(request, product_id):
