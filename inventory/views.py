@@ -123,10 +123,10 @@ def create_staff(request):
     users = User.objects.exclude(id__in=Staff.objects.values_list('user_id', flat=True))
 
     if request.method == 'POST':
-        user = request.POST.get('name')
+        user_id = request.POST.get('name')
         role = request.POST.get('contact_person')
         phone = request.POST.get('phone', '')
-        
+
         Staff.objects.create(
             user_id=request.POST['user'],
             role=request.POST['role'],
