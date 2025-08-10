@@ -125,7 +125,7 @@ def create_staff(request):
         Staff.objects.create(
             user_id=request.POST['user'],
             role=request.POST['role'],
-            phone=request.POST['phone nuumber' ]
+            phone=request.POST['phone number','']
         )
         messages.success(request, "Staff member added.")
         return redirect('staff_list')
