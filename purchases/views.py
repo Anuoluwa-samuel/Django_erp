@@ -91,10 +91,6 @@ def create_vendor(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone', '')
 
-        if not name or not contact_person:
-            messages.error(request, "Name and contact person are required.")
-            return render(request, 'purchases/create_vendor.html')
-
         Vendor.objects.create(
             name=name,
             contact_person=contact_person,
