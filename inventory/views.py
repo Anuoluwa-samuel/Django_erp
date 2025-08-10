@@ -123,7 +123,7 @@ def create_staff(request):
     if request.method == 'POST':
         user_id = request.POST.get('user')
         role = request.POST.get('role')
-        phone = request.POST.get('phone_number', '')
+        phone = request.POST.get('phone', '')  # FIXED HERE
 
         if not user_id:
             messages.error(request, "Name is required.")
