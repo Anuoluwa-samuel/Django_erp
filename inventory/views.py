@@ -132,8 +132,8 @@ def create_staff(request):
             return render(request, 'purchases/create_staff.html')
 
         Staff.objects.create(
-            user_id=request.POST['user'],
-            role=request.POST['role'],
+            user_id=user_id,
+            role=role,
             phone=request.POST['phone_number','']
         )
         messages.success(request, "Staff member added.")
