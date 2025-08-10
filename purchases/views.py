@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationReceived, PurchaseOrder
 from django.contrib import messages
+from django.core.mail import EmailMessage
+from .utils import generate_quotation_pdf
 
 
 
@@ -156,3 +158,16 @@ def delete_vendor(request, pk):
         return redirect('vendor')
 
     return render(request, 'purchases/delete_vendor.html', {'vendor': vendor})
+@login_required
+def send_quotation_email(vendor, quotation):
+    pdf_path = generate_quotation_pdf({'quotation': quotation})
+
+    # Email setup
+    email = EmailMessage(
+        subject=f"Quotation #{quotation.id} from Synestra",
+        body=f"Dear {vendor.name},\n\nPlease find attached the quotation.\n\nBest regards,\nSynestra Team",
+        from_email="youremail@example.com",
+        to=[vendor.email],
+    )
+    email.attach_file(pdf_path)
+    email.send()
