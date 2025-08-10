@@ -132,7 +132,7 @@ def edit_vendor(request, pk):
         vendor.phone = request.POST.get('phone')
         vendor.save() 
         messages.success(request, "Vendor updated successfully.")
-        return redirect('vendor_list')
+        return redirect('vendor')
     
     return render(request, 'purchases/edit_vendor.html', {'vendor': vendor})
 
