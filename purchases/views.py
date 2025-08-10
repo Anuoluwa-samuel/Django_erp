@@ -131,6 +131,10 @@ def edit_vendor(request, pk):
         vendor.contact_person = request.POST.get('contact_person')
         vendor.email = request.POST.get('email')
         vendor.phone = request.POST.get('phone')
+        if not vendor.name:
+            messages.error(request, "Vendor name is required.")
+            return render(request, 'purchases/edit_vendor.html', {'vendor': vendor})
+
         vendor.save() 
         messages.success(request, "Vendor updated successfully.")
         return redirect('vendor_list')
