@@ -127,6 +127,11 @@ def create_staff(request):
         role = request.POST.get('role')
         phone = request.POST.get('phone_number', '')
 
+        email = request.POST.get('email')
+        if not name or not contact_person:
+            messages.error(request, "Name and contact person are required.")
+            return render(request, 'purchases/create_vendor.html')
+
         Staff.objects.create(
             user_id=request.POST['user'],
             role=request.POST['role'],
