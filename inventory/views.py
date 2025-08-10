@@ -1,14 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, View
 from inventory.forms import UserRegisterForm
-from django.contrib.auth import authenticate, login, get_user_model
+from django.contrib.auth import authenticate, login, 
 from django.contrib import messages
 from .models import Product, Category, Order, Staff 
 from django.contrib.auth.decorators import login_required, user_passes_test
-from django.contrib.auth.models import user
 
 
-
+User = get_user_model()
 
 class Index(TemplateView):
     template_name = 'dashboard.html'
