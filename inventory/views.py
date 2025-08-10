@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .models import Product, Category, Order, Staff 
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
 
 
 
@@ -117,7 +118,18 @@ def create_order(request):
     return render(request, 'inventory/create_order.html', {'products': products, 'staff': staff})
 
 @login_required
-c
+def create_staff(request):
+    users = User.objects.exclude(id__in=Staff.objects.values_list('user_id', flat=True))
+
+    if request.method == 'POST':
+        Staff.objects.create(
+            user_id=request.POST['user'],
+            role=request.POST['role']
+        )
+        messages.success(request, "Staff member added.")
+        return redirect('staff_list')
+
+    return render(request, 'inventory/create_staff.html', {'users': users})
 
 @login_required
 def edit_staff(request, staff_id):
