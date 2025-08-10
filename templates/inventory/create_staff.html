@@ -10,7 +10,7 @@
   <label class="block mb-2 font-semibold">Select User</label>
   <select name="user" id="userSelect" class="w-full mb-4 p-2 border rounded">
     {% for u in users %}
-      <option value="{{ u.id }}">{{ u.username }}</option>
+       <option value="{{ u.id }}" data-phone="{{ u.phone }}">{{ u.username }}</option>
     {% endfor %}
   </select>
 
