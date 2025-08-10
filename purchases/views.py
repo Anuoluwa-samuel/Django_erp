@@ -127,7 +127,9 @@ def edit_vendor(request, vendor_id):
     vendor = get_object_or_404(Vendor, id=vendor_id)
 
     if request.method == 'POST':
-            vendor.name = request.POST
+            vendor.name = request.POST['Vendor name']
+            vendor.email = request.POST['contact_person']
+            vendor.email = request.POST['email']
             return redirect('vendor_list' )
     else:
         form = VendorForm(instance=vendor)
