@@ -139,7 +139,7 @@ def create_staff(request):
         messages.success(request, "Staff member added.")
         return redirect('staff_list')
 
-    return render(request, 'inventory/create_staff.html', {'staff': staff})
+    return render(request, 'inventory/create_staff.html', {'user_id': user_id})
 
 @login_required
 def edit_staff(request, staff_id):
