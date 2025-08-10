@@ -8,7 +8,7 @@
   {% csrf_token %}
 
   <label class="block mb-2 font-semibold">Select User</label>
-  <select name="user" class="w-full mb-4 p-2 border rounded">
+  <select name="user" id="userSelect" class="w-full mb-4 p-2 border rounded">
     {% for u in users %}
       <option value="{{ u.id }}">{{ u.username }}</option>
     {% endfor %}
@@ -22,6 +22,19 @@
 
   <button type="submit" class="bg-purple-600 text-white py-2 px-4 rounded">Add Staff</button>
 </form>
+
+<label class="block mb-2 font-semibold">Phone number</label>
+<input type="text" name="phone" id="phoneInput" class="w-full mb-6 p-2 border rounded" required>
+
+
+<script>
+  document.getElementById('userSelect').addEventListener('change', function() {
+    let selectedOption = this.options[this.selectedIndex];
+    let phoneNumber = selectedOption.getAttribute('data-phone') || '';
+    document.getElementById('phoneInput').value = phoneNumber;
+  });
+</script>
+
 
 
 {% endblock %}
