@@ -7,8 +7,8 @@
 <form method="POST" class="bg-white p-6 rounded shadow max-w-xl">
   {% csrf_token %}
 
-  <label class="block mb-2 font-semibold">Username (readonly)</label>
-  <input type="text" value="{{ staff.user.username }}" disabled class="w-full p-2 mb-4 border rounded bg-gray-100">
+  <label class="block mb-2 font-semibold">Username </label>
+  <input type="text" value="{{ staff.user.username }}"  class="w-full p-2 mb-4 border rounded bg-gray-100">
 
   <label class="block mb-2 font-semibold">Role</label>
   <input type="text" name="role" value="{{ staff.role }}" class="w-full p-2 mb-4 border rounded" required>
