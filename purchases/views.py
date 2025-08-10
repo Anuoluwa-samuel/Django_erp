@@ -134,7 +134,7 @@ def edit_vendor(request, vendor_id):
             messages.success(request, "Vendor updated successfully.")
             return redirect('vendor_list' )
     
-    return render(request, 'purchases/edit_vendor.html', {'vendor': form})
+    return render(request, 'purchases/edit_vendor.html', {'vendor': vendor})
 
 # def delete_vendor(request, vendor_id):
 #     vendor = get_object_or_404(Vendor, id=vendor_id)
