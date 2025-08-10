@@ -127,12 +127,13 @@ def edit_vendor(request, pk):
     vendor = get_object_or_404(Vendor, pk=pk)
 
     if request.method == 'POST':
-            vendor.name = request.POST.get['name']
-            vendor.contact_person = request.POST['contact_person']
-            vendor.email = request.POST['email']
-            vendor.phone = request.POST['phone']
-            messages.success(request, "Vendor updated successfully.")
-            return redirect('vendor_list' )
+        vendor.name = request.POST.get('name')  
+        vendor.contact_person = request.POST.get('contact_person')
+        vendor.email = request.POST.get('email')
+        vendor.phone = request.POST.get('phone')
+        vendor.save() 
+        messages.success(request, "Vendor updated successfully.")
+        return redirect('vendor_list')
     
     return render(request, 'purchases/edit_vendor.html', {'vendor': vendor})
 
