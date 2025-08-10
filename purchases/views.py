@@ -133,13 +133,12 @@ def edit_vendor(request, vendor_id):
             vendor.phone = request.POST['phone']
             messages.success(request, "Vendor updated successfully.")
             return redirect('vendor_list' )
-    else:
-        form = VendorForm(instance=vendor)
+    
     return render(request, 'purchases/vendor_edit.html', {'form': form})
 
-def delete_vendor(request, vendor_id):
-    vendor = get_object_or_404(Vendor, id=vendor_id)
-    if request.method == 'POST':
-        vendor.delete()
-        return redirect('vendor_delete')
-    return render(request, 'purchases/vendor_delete.html', {'object': vendor})
+# def delete_vendor(request, vendor_id):
+#     vendor = get_object_or_404(Vendor, id=vendor_id)
+#     if request.method == 'POST':
+#         vendor.delete()
+#         return redirect('vendor_delete')
+#     return render(request, 'purchases/vendor_delete.html', {'object': vendor})
