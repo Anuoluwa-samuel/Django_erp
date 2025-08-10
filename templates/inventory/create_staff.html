@@ -26,15 +26,4 @@
 <label class="block mb-2 font-semibold">Phone number</label>
 <input type="text" name="phone" id="phoneInput" class="w-full mb-6 p-2 border rounded" required>
 
-
-<script>
-  document.getElementById('userSelect').addEventListener('change', function() {
-    let selectedOption = this.options[this.selectedIndex];
-    let phoneNumber = selectedOption.getAttribute('data-phone') || '';
-    document.getElementById('phoneInput').value = phoneNumber;
-  });
-</script>
-
-
-
 {% endblock %}
