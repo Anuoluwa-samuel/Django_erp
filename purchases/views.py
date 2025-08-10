@@ -86,14 +86,23 @@ def submit_quotation(request):
 @login_required
 def create_vendor(request):
     if request.method == 'POST':
+        name = request.POST.get('name')
+        contact_person = request.POST.get('contact_person')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone', '')
+
+        if not name or not contact_person:
+            messages.error(request, "Name and contact person are required.")
+            return render(request, 'purchases/create_vendor.html')
+
         Vendor.objects.create(
-            name=request.POST['name'],
-            contact_person=request.POST['contact_person'],
-            email=request.POST['email'],
-            phone=request.POST.get('phone', '')
+            name=name,
+            contact_person=contact_person,
+            email=email,
+            phone=phone
         )
         messages.success(request, "Vendor created successfully.")
-        return redirect('create_vendor')
+        return redirect('vendor') 
 
     return render(request, 'purchases/create_vendor.html')
 
