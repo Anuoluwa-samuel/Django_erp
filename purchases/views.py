@@ -129,7 +129,7 @@ def vendor_edit(request, vendor_id):
         form = VendorForm(request.POST, instance=vendor)
         if form.is_valid():
             form.save()
-            return redirect('vendor_list' *args, **kwargs)
+            return redirect('vendor_list')
     else:
         form = VendorForm(instance=vendor)
     return render(request, 'purchases/vendor_edit.html', {'form': form})
