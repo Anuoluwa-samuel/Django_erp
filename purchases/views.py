@@ -169,3 +169,12 @@ def send_quotation_email(vendor, quotation):
     )
     email.attach_file(pdf_path)
     email.send()
+
+def approve_quotation(request, quotation_id):
+    quotation = get_object_or_404(Quotation, id=quotation_id)
+    quotation.status = "Approved"
+    quotation.save()
+
+    send_quotation_email(quotation.vendor, quotation)
+    messages.success(request, "Quotation approved and sent to vendor.")
+    return redirect('quotation_list')
