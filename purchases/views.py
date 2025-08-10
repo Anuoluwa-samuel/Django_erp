@@ -143,6 +143,6 @@ def delete_vendor(request, pk):
     if request.method == 'POST':
         vendor.delete()
         messages.success(request, "Vendor deleted.")
-        return redirect('vendor_delete')
+        return redirect('vendor')
 
     return render(request, 'purchases/delete_vendor.html', {'vendor': vendor})
