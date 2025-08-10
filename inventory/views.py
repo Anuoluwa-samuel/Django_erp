@@ -119,7 +119,7 @@ def create_order(request):
 
 @login_required
 def create_staff(request):
-    users = User.objects.exclude(id__in=Staff.objects.values_list('user_id', flat=True))
+    users = user.objects.exclude(id__in=Staff.objects.values_list('user_id', flat=True))
 
     if request.method == 'POST':
         Staff.objects.create(
