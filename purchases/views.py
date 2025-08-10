@@ -123,8 +123,8 @@ def vendor_list(request):
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
 
 @login_required
-def edit_vendor(request, pk=1):
-    vendor = get_object_or_404(Vendor, id=vendor_id)
+def edit_vendor(request, pk):
+    vendor = get_object_or_404(Vendor, pk=pk)
 
     if request.method == 'POST':
             vendor.name = request.POST['Vendor name']
