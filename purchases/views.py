@@ -161,8 +161,6 @@ def delete_vendor(request, pk):
 @login_required
 def send_quotation_email(vendor, quotation):
     pdf_path = generate_quotation_pdf({'quotation': quotation})
-
-    # Email setup
     email = EmailMessage(
         subject=f"Quotation #{quotation.id} from Synestra",
         body=f"Dear {vendor.name},\n\nPlease find attached the quotation.\n\nBest regards,\nSynestra Team",
