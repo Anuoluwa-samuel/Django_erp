@@ -136,9 +136,11 @@ def edit_vendor(request, pk):
     
     return render(request, 'purchases/edit_vendor.html', {'vendor': vendor})
 
-# def delete_vendor(request, vendor_id):
-#     vendor = get_object_or_404(Vendor, id=vendor_id)
+# def delete_vendor(request, pk):
+#     vendor = get_object_or_404(Vendor, pk=pk)
+
 #     if request.method == 'POST':
 #         vendor.delete()
+        messages.success(request, "Staff deleted.")
 #         return redirect('vendor_delete')
 #     return render(request, 'purchases/vendor_delete.html', {'object': vendor})
