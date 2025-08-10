@@ -88,6 +88,7 @@ def create_vendor(request):
     if request.method == 'POST':
         Vendor.objects.create(
             name=request.POST['name'],
+            contact_person 
             email=request.POST['email'],
             phone=request.POST.get('phone', '')
         )
