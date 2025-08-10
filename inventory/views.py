@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, View
 from inventory.forms import UserRegisterForm
-from django.contrib.auth import authenticate, login, 
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .models import Product, Category, Order, Staff 
 from django.contrib.auth.decorators import login_required, user_passes_test
 
 
-User = get_user_model()
 
 class Index(TemplateView):
     template_name = 'dashboard.html'
@@ -118,18 +117,7 @@ def create_order(request):
     return render(request, 'inventory/create_order.html', {'products': products, 'staff': staff})
 
 @login_required
-def create_staff(request):
-    users = user.objects.exclude(id__in=Staff.objects.values_list('user_id', flat=True))
-
-    if request.method == 'POST':
-        Staff.objects.create(
-            user_id=request.POST['user'],
-            role=request.POST['role']
-        )
-        messages.success(request, "Staff member added.")
-        return redirect('staff_list')
-
-    return render(request, 'inventory/create_staff.html', {'users': users})
+c
 
 @login_required
 def edit_staff(request, staff_id):
