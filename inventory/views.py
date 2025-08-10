@@ -129,7 +129,7 @@ def create_staff(request):
 
         if not name:
             messages.error(request, "Name is required.")
-            return render(request, 'purchases/create_vendor.html')
+            return render(request, 'purchases/create_staff.html')
 
         Staff.objects.create(
             user_id=request.POST['user'],
