@@ -139,7 +139,7 @@ def create_staff(request):
         return redirect('staff_list')
 
     # Pass users here for GET request
-    users = User.objects.all()
+    users = User.objects.all() # user is passesd here
     return render(request, 'inventory/create_staff.html', {'users': users})
 @login_required
 def edit_staff(request, staff_id):
