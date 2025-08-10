@@ -42,6 +42,7 @@ def inventory_list(request):
 @login_required
 def create_product(request):
     if request.method == 'POST':
+        
         Product.objects.create(
             name=request.POST['name'],
             category=request.POST['category'],
