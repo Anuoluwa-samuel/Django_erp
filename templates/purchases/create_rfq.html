@@ -5,8 +5,9 @@
 {% block content %}
   <h2 class="text-2xl font-bold mb-6">Create Request for Quote</h2>
   
-<form method="post">
+  <form method="POST" class="bg-white p-6 rounded shadow max-w-md">
     {% csrf_token %}
+    
     <label>Vendor:</label>
     <select name="vendor">
         {% for vendor in vendors %}
