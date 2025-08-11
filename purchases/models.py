@@ -52,6 +52,7 @@ class RequestForMaterials(models.Model):
 class RequestForQuote(models.Model):
     material_request = models.ForeignKey(RequestForMaterials, on_delete=models.CASCADE)
     vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
     requested_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateField()
 
