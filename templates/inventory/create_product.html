@@ -12,7 +12,7 @@
 
   <label class="block mb-2 font-semibold">Category</label>
 <select name="category" required>
-    {% for cat in categories %}
+    {% for cat in Categorys %}
         <option value="{{ cat.id }}">{{ cat.name }}</option>
     {% endfor %}
 </select>
