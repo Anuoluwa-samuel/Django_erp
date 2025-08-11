@@ -26,7 +26,8 @@ def create_purchase_request(request):
     return render(request, 'purchases/create_request.html')
 
 @login_required
-def rfq()
+def rfq(request):
+    if request.method == 'POST' : 
 
 
 @login_required
