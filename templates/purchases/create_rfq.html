@@ -7,7 +7,7 @@
   
   <form method="POST" class="bg-white p-6 rounded shadow max-w-md">
     {% csrf_token %}
-    
+
     <label>Vendor:</label>
     <select name="vendor">
         {% for vendor in vendors %}
@@ -15,9 +15,11 @@
         {% endfor %}
     </select><br><br>
 
-    <label>Item Name:</label>
-    <input type="text" name="item_name" required><br><br>
+    <label class="block mb-2">Item Name:</label>
+    <input type="text" name="item_name" class="w-full mb-4 p-2 border rounded" required>
 
+    <label class="block mb-2">Contact Person</label>
+    <input type="text" name="contact_person" class="w-full mb-4 p-2 border rounded" required>
     <label>Quantity:</label>
     <input type="number" name="quantity" required><br><br>
 
