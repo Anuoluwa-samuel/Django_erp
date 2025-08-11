@@ -9,7 +9,7 @@
     {% csrf_token %}
 
     <label>Vendor:</label>
-    <select name="vendor">
+    <select name="vendor" class="w-full mb-4 p-2 border rounded">
         {% for vendor in vendors %}
             <option value="{{ vendor.id }}">{{ vendor.name }}</option>
         {% endfor %}
