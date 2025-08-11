@@ -137,7 +137,7 @@ def edit_vendor(request, pk):
     vendor = get_object_or_404(Vendor, pk=pk)
 
     if request.method == 'POST': 
-        vendor.username = request.POST.get('name')
+        vendor.name = request.POST.get('username')
         vendor.contact_person = request.POST.get('contact_person')
         vendor.email = request.POST.get('email')
         vendor.phone = request.POST.get('phone')
