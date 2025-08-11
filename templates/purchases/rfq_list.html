@@ -6,14 +6,16 @@
 
 <h2>Request for Quotes</h2>
 <a href="{% url 'create_rfq' %}">Create RFQ</a>
-<table>
+<table class="w-full table-auto border border-gray-300">
+  <thead class="bg-gray-200">
     <tr>
-        <th>Item</th>
-        <th>Vendor</th>
-        <th>Quantity</th>
-        <th>Status</th>
-        <th>Date</th>
+      <th class="px-4 py-2 border">Item</th>
+      <th class="px-4 py-2 border">Qty</th>
+      <th class="px-4 py-2 border">Status</th>
+      <th class="px-4 py-2 border">Requested By</th>
+      <th class="px-4 py-2 border">Action</th> 
     </tr>
+  </thead>
     {% for rfq in rfqs %}
     <tr>
         <td>{{ rfq.item_name }}</td>
