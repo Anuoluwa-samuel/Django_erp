@@ -27,8 +27,9 @@ def create_purchase_request(request):
 
 @login_required
 def rfq(request):
-    if request.method == 'POST':
-        item = request.POST['item']
+    rfqs = RequestForQuote.objects.all()
+    return render(request, 'purchases/rfq_list.html', {'rfqs': rfqs})
+
 
 
 @login_required
