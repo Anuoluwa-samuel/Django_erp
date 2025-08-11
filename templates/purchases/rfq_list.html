@@ -1,3 +1,9 @@
+{% extends 'purchases/base_purchases.html' %}
+
+{% block title %}Vendors{% endblock %}
+
+{% block content %}
+
 <h2>Request for Quotes</h2>
 <a href="{% url 'create_rfq' %}">Create RFQ</a>
 <table>
@@ -18,3 +24,5 @@
     </tr>
     {% endfor %}
 </table>
+
+{% endblock %}
