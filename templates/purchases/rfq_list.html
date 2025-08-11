@@ -1,0 +1,20 @@
+<h2>Request for Quotes</h2>
+<a href="{% url 'create_rfq' %}">Create RFQ</a>
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Vendor</th>
+        <th>Quantity</th>
+        <th>Status</th>
+        <th>Date</th>
+    </tr>
+    {% for rfq in rfqs %}
+    <tr>
+        <td>{{ rfq.item_name }}</td>
+        <td>{{ rfq.vendor.name }}</td>
+        <td>{{ rfq.quantity }}</td>
+        <td>{{ rfq.status }}</td>
+        <td>{{ rfq.request_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
