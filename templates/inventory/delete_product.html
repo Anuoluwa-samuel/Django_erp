@@ -1,10 +1,10 @@
 {% extends 'inventory/base_inventory.html' %}
-{% block title %}Delete Staff{% endblock %}
+{% block title %}Delete Product{% endblock %}
 
 {% block content %}
 <h2 class="text-2xl font-bold mb-6 text-red-600">⚠️ Confirm Delete</h2>
 
-<p class="mb-4">Are you sure you want to delete <strong>{{ staff.user.username }}</strong> from the staff list?</p>
+<p class="mb-4">Are you sure you want to delete <strong>{{ product.name }}</strong> from the Product list?</p>
 
 <form method="POST">
   {% csrf_token %}
