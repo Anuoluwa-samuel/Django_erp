@@ -16,6 +16,7 @@
       <th class="px-4 py-2 border">Date</th> 
     </tr>
   </thead>
+  
     {% for rfq in rfqs %}
     <tr>
         <td class="px-4 py-2 border">{{ rfq.item_name }}</td>
@@ -24,6 +25,12 @@
         <td class="px-4 py-2 border capitalize">{{ rfq.status }}</td>
         <td class="px-4 py-2 border">{{ rfq.request_date }}</td>
     </tr>
+
+     </tr>
+      {% empty %}
+      <tr>
+        <td colspan="5" class="text-center text-gray-500 py-4">No purchase orders found.</td>
+      </tr>
     {% endfor %}
 </table>
 
