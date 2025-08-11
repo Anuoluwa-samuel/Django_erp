@@ -4,7 +4,8 @@ from . import views
 urlpatterns = [
     path('', views.purchase_request_list, name='purchase_request_list'),
     path('request/', views.create_purchase_request, name='create_purchase_request'),
-    path('rfq/send/', views.send_rfq, name='send_rfq'),
+
+    path('rfq/create/', views.send_rfq, name='create_rfq'),
     path('quotations/', views.quotation_list, name='quotation_list'),
     path('quotation/submit/', views.submit_quotation, name='submit_quotation'),
     path('vendor/new/', views.create_vendor, name='create_vendor'),
