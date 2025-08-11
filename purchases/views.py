@@ -53,7 +53,7 @@ def create_rfq(request):
     material_requests = RequestForMaterials.objects.filter(status='approved')
     vendors = Vendor.objects.all()
 
-    return render(request, 'purchases/send_rfq.html', {
+    return render(request, 'purchases/create_rfq.html', {
         'material_requests': material_requests,
         'vendors': vendors,
     })
