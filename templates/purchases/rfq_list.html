@@ -21,7 +21,7 @@
   <tbody>
       {% for rfq in req %}
     <tr>
-        <td class="px-4 py-2 border">{{ rfq.item_name }}</td>
+        <td class="px-4 py-2 border">{{ rfq.material_request.item_name }}</td>
         <td class="px-4 py-2 border">{{ rfq.vendor.name }}</td>
         <td class="px-4 py-2 border">{{ rfq.quantity }}</td>
         <td class="px-4 py-2 border capitalize">{{ rfq.status }}</td>
