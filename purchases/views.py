@@ -25,6 +25,9 @@ def create_purchase_request(request):
 
     return render(request, 'purchases/create_request.html')
 
+@login_required
+def rfq()
+
 
 @login_required
 def create_rfq(request):
