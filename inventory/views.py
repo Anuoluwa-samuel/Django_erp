@@ -42,16 +42,18 @@ def inventory_list(request):
 @login_required
 def create_product(request):
     if request.method == 'POST':
-        
+        category_id = request.POST['category']  # assuming category is sent as ID
+        category_instance = Category.objects.get(id=category_id)
+
         Product.objects.create(
             name=request.POST['name'],
-            category=request.POST['category'],
+            category=category_instance,  # ✅ pass the Category instance
             quantity=request.POST['quantity']
         )
         messages.success(request, "Product added.")
         return redirect('product_list')
-    return render(request, 'inventory/create_product.html')
 
+    return render(request, 'inventory/create_product.html')
 @login_required
 def edit_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
