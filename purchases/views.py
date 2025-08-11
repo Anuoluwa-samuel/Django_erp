@@ -27,7 +27,7 @@ def create_purchase_request(request):
 
 
 @login_required
-def send_rfq(request):
+def create_rfq(request):
     if request.method == 'POST':
         material_id = request.POST['material_request']
         vendor_id = request.POST['vendor']
@@ -41,8 +41,8 @@ def send_rfq(request):
             vendor=vendor,
             deadline=deadline
         )
-        messages.success(request, "RFQ sent successfully.")
-        return redirect('send_rfq')
+        messages.success(request, "RFQ Created successfully.")
+        return redirect('create_rfq')
 
     material_requests = RequestForMaterials.objects.filter(status='approved')
     vendors = Vendor.objects.all()
