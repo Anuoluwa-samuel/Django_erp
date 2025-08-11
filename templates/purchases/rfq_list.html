@@ -14,8 +14,8 @@
       <th class="px-4 py-2 border">Item</th>
       <th class="px-4 py-2 border">Vendor</th>
       <th class="px-4 py-2 border">Quantity</th>
-      <th class="px-4 py-2 border">Status</th>
-      <th class="px-4 py-2 border">Date</th> 
+      <th class="px-4 py-2 border">Date</th>
+      <th class="px-4 py-2 border">Deadline</th> 
     </tr>
   </thead>
   <tbody>
@@ -24,8 +24,8 @@
         <td class="px-4 py-2 border">{{ rfq.material_request.item_name }}</td>
         <td class="px-4 py-2 border">{{ rfq.vendor.name }}</td>
         <td class="px-4 py-2 border">{{ rfq.quantity }}</td>
-        <td class="px-4 py-2 border capitalize">{{ rfq.status }}</td>
         <td class="px-4 py-2 border">{{ rfq.requested_at }}</td>
+        <td class="px-4 py-2 border capitalize">{{ rfq.status }}</td>
     </tr>
 
      </tr>
