@@ -10,12 +10,17 @@
   <label class="block mb-2 font-semibold">Product Name</label>
   <input type="text" name="name" class="w-full p-2 border rounded mb-4" required>
 
-<label class="block mb-2 font-semibold">Category</label>
-<select name="category" required>
+<label class="block mb-2 font-semibold">Select Existing Category</label>
+<select name="category_id">
+    <option value="">-- Select Existing --</option>
     {% for cat in categories %}
         <option value="{{ cat.id }}">{{ cat.name }}</option>
     {% endfor %}
 </select>
+
+<label class="block mb-2 font-semibold mt-4">Or Create New Category</label>
+<input type="text" name="new_category" class="w-full p-2 border rounded mb-4" placeholder="Enter new category">
+
 
 
   <label class="block mb-2 font-semibold">Quantity</label>
