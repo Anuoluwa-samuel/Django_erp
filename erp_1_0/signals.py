@@ -14,7 +14,7 @@ def create_default_roles(sender, **kwargs):
     Runs only for relevant apps to avoid repeating unnecessarily.
     """
     # Only run for main/core app to avoid running multiple times
-    if sender.name != 'core':  
+    if sender.name != 'erp_1_0':  
         return
 
     # Create main groups

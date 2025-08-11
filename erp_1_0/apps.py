@@ -5,4 +5,4 @@ class CoreConfig(AppConfig):
     name = 'core'
 
     def ready(self):
-        import core.signals  # Import signals so Django registers them
+        import .signals  # Import signals so Django registers them
