@@ -16,8 +16,8 @@
       <th class="px-4 py-2 border">Date</th> 
     </tr>
   </thead>
-  
-    {% for rfq in rfqs %}
+  <tbody>
+      {% for rfq in rfqs %}
     <tr>
         <td class="px-4 py-2 border">{{ rfq.item_name }}</td>
         <td class="px-4 py-2 border">{{ rfq.vendor.name }}</td>
@@ -32,6 +32,8 @@
         <td colspan="5" class="text-center text-gray-500 py-4">No purchase orders found.</td>
       </tr>
     {% endfor %}
+  </tbody>
+    
 </table>
 
 {% endblock %}
