@@ -11,12 +11,7 @@
   <input type="text" name="name" class="w-full p-2 border rounded mb-4" required>
 
   <label class="block mb-2 font-semibold">Category</label>
-<select name="category" required>
-    {% for cat in Category %}
-        <option value="{{ cat.id }}">{{ cat.name }}</option>
-    {% endfor %}
-</select>
-
+  <input type="text" name="category" class="w-full p-2 border rounded mb-4" required>
 
   <label class="block mb-2 font-semibold">Quantity</label>
   <input type="number" name="quantity" class="w-full p-2 border rounded mb-6" required>
