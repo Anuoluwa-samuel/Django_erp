@@ -24,7 +24,8 @@
         <td class="px-4 py-2 border">{{ order.quantity }}</td>
         <td class="px-4 py-2 border capitalize">{{ order.status }}</td>
         <td class="px-4 py-2 border">{{ order.created_at }}</td>
-        
+        <td class="px-4 py-2 border">{{ order.requested_by }}</td>
+
       </tr>
       {% empty %}
       <tr>
