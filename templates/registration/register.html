@@ -11,10 +11,10 @@
 
         {% for field in form %}
         <div class="mb-4" >
-            <label class="block mb-2">{{ field.label }}</label>
+            <label class="w-full mb-4 p-2 border rounded">{{ field.label }}</label>
             {{ field }}
             {% if field.errors %}
-                <p class="text-red-500 text-sm">{{ field.errors.0 }}</p>
+                <p class="text-red-500 text-sm" >{{ field.errors.0 }}</p>
             {% endif %}
         </div>
         {% endfor %}
