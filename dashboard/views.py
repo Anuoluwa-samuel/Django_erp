@@ -38,7 +38,7 @@ def dashboard_view(request):
     ]
     return render(request, "dashboard.html", {"modules": modules})
 
-def register(request):
+def register_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
