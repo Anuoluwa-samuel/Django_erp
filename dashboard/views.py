@@ -47,16 +47,3 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
-
-def signup_view(request):
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = authenticate(
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password1']
-            )
-
-            login(request, user)
-            return redirect ('index')
-        return render(request, 'inventory/signup.html', {'form': form}) 
