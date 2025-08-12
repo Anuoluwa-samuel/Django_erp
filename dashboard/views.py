@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from inventory.models import Staff
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm
+from .forms import UserCreationForm
 from django.contrib import messages
 
 
@@ -38,26 +38,14 @@ def dashboard_view(request):
     ]
     return render(request, "dashboard.html", {"modules": modules})
 
-def register_view(request):
+def register(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.email = form.cleaned_data['email']
-            user.save()
-            Staff.objects.create(
-                user=user,
-                role='Store Assistant', 
-                phone='0000000000'       
-            )
-            messages.success(request, 'Account created successfully! You can now log in.')
-
-            
+            form.save()
             return redirect('login')
-           
     else:
-        form = CustomUserCreationForm()
-
+        form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
 def signup_view(request):
