@@ -12,17 +12,18 @@
         {% for field in form %}
         <div class="mb-4">
             <label class="block mb-2">{{ field.label }}</label>
-        <input type="text" name="username" class="w-full border p-2 rounded mb-4">
-
+            {{ field }}
             {% if field.errors %}
                 <p class="text-red-500 text-sm">{{ field.errors.0 }}</p>
             {% endif %}
-        
-        {% endfor %}
         </div>
+        {% endfor %}
+
         <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">Register</button>
-                <p class="mt-4 text-sm text-center">I already have an account  
-                <a href="{% url 'login' %}" class="text-blue-600 hover:text">Login</a>
+        <p class="mt-4 text-sm text-center">
+            I already have an account  
+            <a href="{% url 'login' %}" class="text-blue-600 hover:text-blue-800">Login</a>
+        </p>
     </form>
 </body>
 </html>
