@@ -43,6 +43,7 @@ def register_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Vendor created successfully.")
             return redirect('login')
     else:
         form = UserCreationForm()
