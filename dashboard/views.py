@@ -7,19 +7,6 @@ from django.contrib import messages
 
 
 
-from django.contrib.auth.decorators import login_required, user_passes_test
-from django.shortcuts import render
-
-def superuser_required(user):
-    return user.is_superuser
-
-@login_required
-@user_passes_test(superuser_required)
-def superuser_only_view(request):
-    return render(request, 'core/manage_users.html')
-
-
-
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
