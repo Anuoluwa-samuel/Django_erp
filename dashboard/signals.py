@@ -1,5 +1,5 @@
 # core/signals.py
-from django.db.models.signals import post_migrate
+from django.db.models.signals import post_migrate, post_save
 from django.contrib.auth.models import Group, Permission
 from django.contrib.contenttypes.models import ContentType
 from django.dispatch import receiver
@@ -20,3 +20,13 @@ def create_general_user_group(sender, **kwargs):
         general_group.permissions.add(*perms)
 
     print("✅ General User group created with limited permissions")
+
+# core/signals.py (add this after the first function)
+from django.db.models.signals import 
+from django.contrib.auth.models import 
+
+@receiver(post_save, sender=User)
+def assign_general_user_group(sender, instance, created, **kwargs):
+    if created and not instance.is_superuser:
+        general_group = Group.objects.get(name='General User')
+        instance.groups.add(general_group)
