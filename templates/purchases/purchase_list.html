@@ -30,6 +30,8 @@
         {% if user.is_superuser %}
           <a href="{% url 'approve_request' r.id %}" class="text-green-600 hover:underline">Approve</a> |
           <a href="{% url 'decline_request' r.id %}" class="text-red-600 hover:underline">Decline</a>
+          {% else %}
+          <p>pending</p>
         {% endif %}
         {% else %}
           <span class="text-gray-500 capitalize">{{ r.status }}</span>
