@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('dashboard.urls')), 
     path('inventory/', include('inventory.urls')),
     path('purchases/', include('purchases.urls')),
+    path('purchases/', include('user.urls')),
     path('', lambda request: redirect('login'), name='home'),
 ]
