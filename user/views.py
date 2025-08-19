@@ -1,10 +1,10 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from .forms import UserCreationForm
 from django.contrib import messages
     
-# Create your views here.
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -20,6 +20,23 @@ def login_view(request):
 
     return render(request, 'login.html')
 
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+@login_required
+def dashboard_view(request):
+    modules = [
+        {"name": "Inventory", "url": "/inventory/", "desc": "Manage product items"},
+        {"name": "Purchases", "url": "/purchases/", "desc": "Manage purchase orders"},
+        {"name": "HR", "url": "/#/", "desc": "Human Resources"},
+        {"name": "Stock", "url": "/#/", "desc": "Stock level tracking"},
+        {"name": "Accounting", "url": "/#/", "desc": "Financial operations"},
+        {"name": "CRM", "url": "/#/", "desc": "Customer relationship tracking"},
+        {"name": "Sales", "url": "/#/", "desc": "Sales order and invoice management"},
+        
+    ]
+    return render(request, "dashboard.html", {"modules": modules})
 
 def register_view(request):
     if request.method == 'POST':
