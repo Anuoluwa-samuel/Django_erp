@@ -1,5 +1,11 @@
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from inventory.models import Staff
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from .forms import UserCreationForm
+from django.contrib import messages
+    
 # Create your views here.
 
 def login_view(request):
@@ -15,3 +21,15 @@ def login_view(request):
             return render(request, 'login.html', {'error': 'Invalid credentials'})
 
     return render(request, 'login.html')
+
+
+def register_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "User created successfully.")
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
