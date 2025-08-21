@@ -152,6 +152,7 @@ def vendor_list(request):
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
 
 @login_required
+@group_required(["Admin"])
 def edit_vendor(request, pk):
     vendor = get_object_or_404(Vendor, pk=pk)
 
@@ -167,6 +168,7 @@ def edit_vendor(request, pk):
     return render(request, 'purchases/edit_vendor.html', {'vendor': vendor})
 
 @login_required
+@group_required(["Admin"])
 def delete_vendor(request, pk):
     vendor = get_object_or_404(Vendor, pk=pk)
 
