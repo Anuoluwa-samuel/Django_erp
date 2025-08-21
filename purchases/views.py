@@ -7,10 +7,6 @@ from rest_framework.response import Response
 from accounts.permissions import IsAdmin, IsSupervisor, IsStaff, IsAdminOrSupervisor, IsStaffOrSupervisor
 
 
-@api_view(['GET'])
-@permission_classes([IsAdmin | IsSupervisor])  # Admin or Supervisor can access
-def purchase_order_view(request):
-    return Response({"message": "Only Admins and Supervisors can access this."})
 
 
 
