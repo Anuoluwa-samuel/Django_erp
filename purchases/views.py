@@ -4,6 +4,25 @@ from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationRecei
 from django.contrib import messages
 
 
+from accounts.permissions import group_required
+from django.http import HttpResponse
+
+# Only Admin can open this page
+@group_required(["Admin"])
+def admin_dashboard(request):
+    return HttpResponse("Welcome Admin")
+
+# Admin + Supervisor can approve purchases
+@group_required(["Admin", "Supervisor"])
+def approve_purchase(request, pk):
+    return HttpResponse(f"Purchase {pk} approved")
+
+# Only Staff can create orders
+@group_required(["Staff"])
+def create_order(request):
+    return HttpResponse("Order created")
+
+
 
 
 
