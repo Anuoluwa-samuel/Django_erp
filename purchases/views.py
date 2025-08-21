@@ -8,6 +8,13 @@ from accounts.permissions import IsAdmin, IsSupervisor
 
 
 
+class PurchaseOrderView(APIView):
+    permission_classes = [IsAdmin | IsSupervisor]  # allows either Admin or Supervisor
+
+    def get(self, request):
+        return Response({"message": "Only Admins and Supervisors can access this."})
+
+
 # Check functions
 def is_admin(user):
     return user.groups.filter(name="Admin").exists()
