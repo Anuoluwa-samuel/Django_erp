@@ -1,24 +1,12 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from .permissions import IsAdmin, IsSupervisor, IsStaff
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.shortcuts import render
 
-class AdminOnlyView(APIView):
-    permission_classes = [IsAuthenticated, IsAdmin]
+# Check functions
+def is_admin(user):
+    return user.groups.filter(name='Admin').exists()
 
-    def get(self, request):
-        return Response({"message": "Hello Admin!"})
+def is_supervisor(user):
+    return user.groups.filter(name='Supervisor').exists()
 
-
-class SupervisorOnlyView(APIView):
-    permission_classes = [IsAuthenticated, IsSupervisor]
-
-    def get(self, request):
-        return Response({"message": "Hello Supervisor!"})
-
-
-class StaffOnlyView(APIView):
-    permission_classes = [IsAuthenticated, IsStaff]
-
-    def get(self, request):
-        return Response({"message": "Hello Staff!"})
+def is_staff(user):
+    return user.groups.filter(name='Staff').exists()
