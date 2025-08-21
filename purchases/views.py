@@ -98,6 +98,7 @@ def submit_quotation(request):
     return render(request, 'purchases/submit_quotation.html', {'rfqs': rfqs})
 
 @login_required
+@group_required(["Admin", "Supervisor"])
 def create_vendor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -121,6 +122,7 @@ def create_vendor(request):
     return render(request, 'purchases/create_vendor.html')
 
 @login_required
+@group_required(["Admin", "Supervisor"])
 def approve_request(request, request_id):
     pr = get_object_or_404(RequestForMaterials, id=request_id)
     pr.status = 'approved'
@@ -129,6 +131,7 @@ def approve_request(request, request_id):
     return redirect('purchase_request_list')
 
 @login_required
+@group_required(["Admin", "Supervisor"])
 def decline_request(request, request_id):
     pr = get_object_or_404(RequestForMaterials, id=request_id)
     pr.status = 'declined'
@@ -137,11 +140,13 @@ def decline_request(request, request_id):
     return redirect('purchase_request_list')
 
 @login_required
+@group_required(["Staff", "Supervisor"])
 def purchase_order_list(request):
     orders = PurchaseOrder.objects.all()
     return render(request, 'purchases/purchase_order_list.html', {'orders': orders})
 
 @login_required
+@group_required(["Staff", "Supervisor"])
 def vendor_list(request):
     vendors = Vendor.objects.all()
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
