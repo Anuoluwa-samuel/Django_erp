@@ -1,8 +1,24 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationReceived, PurchaseOrder
 from django.contrib import messages
 from accounts.permissions import group_required
+
+
+# Check functions
+def is_admin(user):
+    return user.groups.filter(name="Admin").exists()
+
+def is_supervisor(user):
+    return user.groups.filter(name="Supervisor").exists()
+
+def is_staff(user):
+    return user.groups.filter(name="Staff").exists()
+
+
+
+
+
 
 
 
