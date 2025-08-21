@@ -112,6 +112,8 @@ def submit_quotation(request):
     return render(request, 'purchases/submit_quotation.html', {'rfqs': rfqs})
 
 @login_required
+@api_view(['GET'])
+@permission_classes([IsAdmin])
 def create_vendor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
