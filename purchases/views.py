@@ -4,7 +4,7 @@ from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationRecei
 from django.contrib import messages
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from accounts.permissions import IsAdmin, IsSupervisor, IsStaff, IsAdminOrSupervisor
+from accounts.permissions import IsAdmin, IsSupervisor, IsStaff, IsAdminOrSupervisor, IsStaffOrSupervisor
 
 
 

@@ -40,7 +40,7 @@ class IsAdminOrSupervisor(permissions.BasePermission):
         )
 
 # ----- Combined: Staff OR Supervisor -----
-class IsAdminOrSupervisor(permissions.BasePermission):
+class IsStaffOrSupervisor(permissions.BasePermission):
     def has_permission(self, request, view):
         return (
             request.user
