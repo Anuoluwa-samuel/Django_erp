@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationReceived, PurchaseOrder
 from django.contrib import messages
-from rest_framework.views import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from accounts.permissions import IsAdmin, IsSupervisor, IsStaff, IsAdminOrSupervisor, IsStaffOrSupervisor
 
