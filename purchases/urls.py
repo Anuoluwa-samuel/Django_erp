@@ -1,5 +1,5 @@
 from django.urls import path
-from .views  import 
+from .views  import create_vendor
 
 urlpatterns = [
     path('', views.purchase_request_list, name='purchase_request_list'),
