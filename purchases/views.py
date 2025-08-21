@@ -98,7 +98,7 @@ def submit_quotation(request):
     return render(request, 'purchases/submit_quotation.html', {'rfqs': rfqs})
 
 @login_required
-@group_required(["Admin", "Supervisor"])
+@group_required(["Admin"])
 def create_vendor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
