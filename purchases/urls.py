@@ -1,10 +1,10 @@
 from django.urls import path
-from .views  import create_vendor, approve_request, purchase_request_list, create_purchase_request
+from .views  import create_vendor, approve_request, purchase_request_list, create_purchase_request, rfq, quotation_list, submit_quotation, edit_vendor,vendor_list,
 
 urlpatterns = [
     path('', purchase_request_list, name='purchase_request_list'),
     path('request/', create_purchase_request, name='create_purchase_request'),
-    # path('rfq/', views.rfq, name='rfq'),
+    path('rfq/', views.rfq, name='rfq'),
     # path('rfq/create/', views.create_rfq, name='create_rfq'),
     # path('quotations/', views.quotation_list, name='quotation_list'),
     # path('quotation/submit/', views.submit_quotation, name='submit_quotation'),
