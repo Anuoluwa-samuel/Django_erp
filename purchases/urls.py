@@ -1,5 +1,5 @@
 from django.urls import path
-from .views  import create_vendor
+from .views  import create_vendor, approve_request
 
 urlpatterns = [
     path('', views.purchase_request_list, name='purchase_request_list'),
@@ -12,7 +12,7 @@ urlpatterns = [
     path('vendors/', views.vendor_list, name='vendor'),
     path('vendors/<int:pk>/edit/', create_vendor, name='edit_vendor'),
     path('vendors/<int:pk>/delete/', views.delete_vendor, name='delete_vendor'),
-    path('request/<int:request_id>/approve/', views.approve_request, name='approve_request'),
+    path('request/<int:request_id>/approve/', approve_request, name='approve_request'),
     path('request/<int:request_id>/decline/', views.decline_request, name='decline_request'),
     path('orders/', views.purchase_order_list, name='purchase_order_list'),
 
