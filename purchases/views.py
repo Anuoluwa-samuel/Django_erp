@@ -11,8 +11,7 @@ from accounts.permissions import IsAdmin, IsSupervisor, IsStaff, IsAdminOrSuperv
 
 
 @login_required
-@api_view(['GET'])
-@permission_classes([IsStaff])
+
 def create_purchase_request(request):
     if request.method == 'POST':
         item = request.POST['item']
@@ -95,8 +94,6 @@ def submit_quotation(request):
     return render(request, 'purchases/submit_quotation.html', {'rfqs': rfqs})
 
 @login_required
-@api_view(['GET'])
-@permission_classes([IsAdmin])
 def create_vendor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -120,8 +117,6 @@ def create_vendor(request):
     return render(request, 'purchases/create_vendor.html')
 
 @login_required
-@api_view(['GET'])
-@permission_classes([IsAdmin])
 def approve_request(request, request_id):
     pr = get_object_or_404(RequestForMaterials, id=request_id)
     pr.status = 'approved'
@@ -130,8 +125,6 @@ def approve_request(request, request_id):
     return redirect('purchase_request_list')
 
 @login_required
-@api_view(['GET'])
-@permission_classes([IsAdmin])
 def decline_request(request, request_id):
     pr = get_object_or_404(RequestForMaterials, id=request_id)
     pr.status = 'declined'
