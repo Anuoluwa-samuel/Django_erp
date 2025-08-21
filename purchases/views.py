@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationReceived, PurchaseOrder
 from django.contrib import messages
-from accounts.permissions import group_required
+from accounts.permissions import Is_admin, IsSupervisor, IsStaff
+
 
 
 # Check functions
