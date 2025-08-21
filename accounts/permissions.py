@@ -1,4 +1,5 @@
 from django.http import HttpResponseForbidden
+from rest_framework import permissions
 
 def group_required(allowed_groups=[]):
     def decorator(view_func):
@@ -15,3 +16,40 @@ def group_required(allowed_groups=[]):
             return HttpResponseForbidden("Permission denied")
         return wrapper
     return decorator
+
+
+# ----- Admin -----
+class IsAdmin(permissions.BasePermission):
+    """
+    Allows access only to users in the 'Admin' group.
+    """
+    def has_permission(self, request, view):
+        return (
+            request.user
+            and request.user.is_authenticated
+            and request.user.groups.filter(name="Admin").exists()
+        )
+
+# ----- Supervisor -----
+class IsSupervisor(permissions.BasePermission):
+    """
+    Allows access only to users in the 'Supervisor' group.
+    """
+    def has_permission(self, request, view):
+        return (
+            request.user
+            and request.user.is_authenticated
+            and request.user.groups.filter(name="Supervisor").exists()
+        )
+
+# ----- Staff -----
+class IsStaff(permissions.BasePermission):
+    """
+    Allows access only to users in the 'Staff' group.
+    """
+    def has_permission(self, request, view):
+        return (
+            request.user
+            and request.user.is_authenticated
+            and request.user.groups.filter(name="Staff").exists()
+        )
