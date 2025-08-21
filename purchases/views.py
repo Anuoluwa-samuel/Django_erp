@@ -15,6 +15,9 @@ def is_supervisor(user):
 def is_staff(user):
     return user.groups.filter(name="Staff").exists()
 
+def is_admin_or_supervisor(user):
+    return user.groups.filter(name__in=["Admin", "Supervisor"]).exists()
+
 
 
 
