@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationReceived, PurchaseOrder
 from django.contrib import messages
-from core.permissions import group_required
+from accounts.permissions import group_required
 
 
 
 
 
 @login_required
-@group_required(["Admin"])
+@group_required(["Staff", "Supervisor"])
 def create_purchase_request(request):
     if request.method == 'POST':
         item = request.POST['item']
