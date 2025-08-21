@@ -7,23 +7,10 @@ from rest_framework.response import Response
 from accounts.permissions import IsAdmin, IsSupervisor, IsStaff, IsAdminOrSupervisor, IsStaffOrSupervisor
 
 
-
-
-# Check functions
-def is_admin(user):
-    return user.groups.filter(name="Admin").exists()
-
-def is_supervisor(user):
-    return user.groups.filter(name="Supervisor").exists()
-
-def is_staff(user):
-    return user.groups.filter(name="Staff").exists()
-
-def is_admin_or_supervisor(user):
-    return user.groups.filter(name__in=["Admin", "Supervisor"]).exists()
-
-def is_staff_or_supervisor(user):
-    return user.groups.filter(name__in=["Staff", "Supervisor"]).exists()
+@api_view(['GET'])
+@permission_classes([IsAdmin | IsSupervisor])  # Admin or Supervisor can access
+def purchase_order_view(request):
+    return Response({"message": "Only Admins and Supervisors can access this."})
 
 
 
