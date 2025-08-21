@@ -1,52 +1,15 @@
-from rest_framework import permissions
 
-# ----- Admin -----
-class IsAdmin(permissions.BasePermission):
-    def has_permission(self, request, view):
-        return (
-            request.user
-            and request.user.is_authenticated
-            and request.user.groups.filter(name="Admin").exists()
-        )
+from django.http import HttpResponseForbidden
 
-# ----- Supervisor -----
-class IsSupervisor(permissions.BasePermission):
-    def has_permission(self, request, view):
-        return (
-            request.user
-            and request.user.is_authenticated
-            and request.user.groups.filter(name="Supervisor").exists()
-        )
+def group_required(allowed_groups=[]):
+    def decorator(view_func):
+        def wrapper(request, *args, **kwargs):
+            if not request.user.is_authenticated:
+                return HttpResponseForbidden("You must log in first")
 
-# ----- Staff -----
-class IsStaff(permissions.BasePermission):
-    def has_permission(self, request, view):
-        return (
-            request.user
-            and request.user.is_authenticated
-            and request.user.groups.filter(name="Staff").exists()
-        )
+            if request.user.groups.filter(name__in=allowed_groups).exists():
+                return view_func(request, *args, **kwargs)
 
-# ----- Combined: Admin OR Supervisor -----
-class IsAdminOrSupervisor(permissions.BasePermission):
-    def has_permission(self, request, view):
-        return (
-            request.user
-            and request.user.is_authenticated
-            and (
-                request.user.groups.filter(name="Admin").exists()
-                or request.user.groups.filter(name="Supervisor").exists()
-            )
-        )
-
-# ----- Combined: Staff OR Supervisor -----
-class IsStaffOrSupervisor(permissions.BasePermission):
-    def has_permission(self, request, view):
-        return (
-            request.user
-            and request.user.is_authenticated
-            and (
-                request.user.groups.filter(name="Staff").exists()
-                or request.user.groups.filter(name="Supervisor").exists()
-            )
-        )
+            return HttpResponseForbidden("Permission denied")
+        return wrapper
+    return decorator
