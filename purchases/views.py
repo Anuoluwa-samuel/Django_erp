@@ -24,7 +24,7 @@ def is_staff_or_supervisor(user):
 
 
 @login_required
-@group_required(["Staff", "Supervisor"])
+@user_passes_test(is_admin_or_supervisor)
 def create_purchase_request(request):
     if request.method == 'POST':
         item = request.POST['item']
