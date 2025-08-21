@@ -38,3 +38,15 @@ class IsAdminOrSupervisor(permissions.BasePermission):
                 or request.user.groups.filter(name="Supervisor").exists()
             )
         )
+
+# ----- Combined: Staff OR Supervisor -----
+class IsStaffOrSupervisor(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return (
+            request.user
+            and request.user.is_authenticated
+            and (
+                request.user.groups.filter(name="Staff").exists()
+                or request.user.groups.filter(name="Supervisor").exists()
+            )
+        )
