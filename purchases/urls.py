@@ -1,5 +1,5 @@
 from django.urls import path
-from .views  import create_vendor, approve_request, purchase_request_list, create_purchase_request, rfq, quotation_list, submit_quotation, edit_vendor,vendor_list,decline_request,delete_vendor,
+from .views  import create_vendor, approve_request, purchase_request_list, create_purchase_request, rfq,purchase_order_list, create_rfq,quotation_list, submit_quotation, edit_vendor,vendor_list,decline_request,delete_vendor
 
 urlpatterns = [
     path('', purchase_request_list, name='purchase_request_list'),
