@@ -93,8 +93,8 @@ def submit_quotation(request):
         messages.success(request, "Quotation submitted.")
         return redirect('quotation_list')
 
-    rfqs = RequestForQuote.objects.all()
-    return render(request, 'purchases/submit_quotation.html', {'rfqs': rfqs})
+    rfq = RequestForQuote.objects.all()
+    return render(request, 'purchases/submit_quotation.html', {'rfq': rfq})
 
 @login_required
 @group_required(["Admin"])
