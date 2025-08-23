@@ -63,6 +63,7 @@ def create_rfq(request):
 
 
 @login_required
+@group_required(["Supervisor"])
 def quotation_list(request):
     quotations = QuotationReceived.objects.select_related('rfq', 'rfq__material_request', 'rfq__vendor')
     return render(request, 'purchases/quotation_list.html', {
