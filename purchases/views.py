@@ -94,7 +94,7 @@ def submit_quotation(request):
         return redirect('quotation_list')
 
     rfq = RequestForQuote.objects.all()
-    return render(request, 'purchases/submit_quotation.html', {'rfq': rfq})
+    return render(request, 'purchases/submit_quotations.html', {'rfq': rfq})
 
 @login_required
 @group_required(["Admin"])
