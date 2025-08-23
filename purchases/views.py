@@ -116,6 +116,7 @@ def create_vendor(request):
     return render(request, 'purchases/create_vendor.html')
 
 @login_required
+@group_required(["Supervisor", "Admin"])
 def approve_request(request, request_id):
     pr = get_object_or_404(RequestForMaterials, id=request_id)
     pr.status = 'approved'
@@ -124,6 +125,7 @@ def approve_request(request, request_id):
     return redirect('purchase_request_list')
 
 @login_required
+@group_required(["Supervisor", "Admin"])
 def decline_request(request, request_id):
     pr = get_object_or_404(RequestForMaterials, id=request_id)
     pr.status = 'declined'
