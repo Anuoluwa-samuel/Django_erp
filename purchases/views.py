@@ -9,7 +9,7 @@ from accounts.permissions import group_required
 
 
 @login_required
-@group_required(["Staff", "Supervisor"])
+@group_required(["Staff", "Supervisor", "Admin"])
 def create_purchase_request(request):
     if request.method == 'POST':
         item = request.POST['item']
