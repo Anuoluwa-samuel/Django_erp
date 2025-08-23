@@ -11,7 +11,7 @@
     <label class="block mb-2 font-semibold">RFQ</label>
     <select name="rfq" class="w-full mb-4 p-2 border rounded">
       {% for r in rfq %}
-        <option value="{{ r.id }}">{{ r.material_request.item_name }} - {{ r.vendor.name }}</option>
+        <option value="{{ r.id }}">{{ r.material_request.item_name }}</option>
       {% endfor %}
     </select>
 
