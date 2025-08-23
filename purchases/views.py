@@ -97,7 +97,7 @@ def submit_quotation(request):
     return render(request, 'purchases/submit_quotation.html', {'rfqs': rfqs})
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
+@group_required(["Admin"])
 def create_vendor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -139,16 +139,19 @@ def decline_request(request, request_id):
     return redirect('purchase_request_list')
 
 @login_required
+@group_required(["Staff", "Supervisor", "Admin"])
 def purchase_order_list(request):
     orders = PurchaseOrder.objects.all()
     return render(request, 'purchases/purchase_order_list.html', {'orders': orders})
 
 @login_required
+@group_required(["Staff", "Supervisor", "Admin"])
 def vendor_list(request):
     vendors = Vendor.objects.all()
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
 
 @login_required
+@group_required(["Admin"])
 def edit_vendor(request, pk):
     vendor = get_object_or_404(Vendor, pk=pk)
 
