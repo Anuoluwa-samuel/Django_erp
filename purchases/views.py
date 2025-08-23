@@ -28,6 +28,7 @@ def create_purchase_request(request):
     return render(request, 'purchases/create_request.html')
 
 @login_required
+@group_required(["Staff", "Supervisor", "Admin"])
 def rfq(request):
     req = RequestForQuote.objects.all()
     return render(request, 'purchases/rfq_list.html', {'req': req})
@@ -35,6 +36,7 @@ def rfq(request):
 
 
 @login_required
+@group_required(["Staff", "Supervisor", "Admin"])
 def create_rfq(request):
     if request.method == 'POST':
         material_id = request.POST['material_request']
@@ -63,7 +65,7 @@ def create_rfq(request):
 
 
 @login_required
-@group_required(["Staff", "Supervisor"])
+@group_required(["Staff", "Supervisor", "Admin"])
 def quotation_list(request):
     quotations = QuotationReceived.objects.select_related('rfq', 'rfq__material_request', 'rfq__vendor')
     return render(request, 'purchases/quotation_list.html', {
@@ -72,11 +74,13 @@ def quotation_list(request):
 
 
 @login_required
+@group_required(["Staff", "Supervisor", "Admin"])
 def purchase_request_list(request):
     requests = RequestForMaterials.objects.all()
     return render(request, 'purchases/purchase_list.html', {'requests': requests})
 
 @login_required
+@group_required(["Staff", "Supervisor", "Admin"])
 def submit_quotation(request):
     if request.method == 'POST':
         rfq = get_object_or_404(RequestForQuote, id=request.POST['rfq'])
@@ -93,6 +97,7 @@ def submit_quotation(request):
     return render(request, 'purchases/submit_quotation.html', {'rfqs': rfqs})
 
 @login_required
+@group_required(["Staff", "Supervisor", "Admin"])
 def create_vendor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
