@@ -79,7 +79,7 @@ def purchase_request_list(request):
     requests = RequestForMaterials.objects.all()
     return render(request, 'purchases/purchase_list.html', 
                   {'requests': requests, 
-                  'is_admin_user': is_admin_user)
+                  'is_admin': is_admin})
 
 @login_required
 @group_required(["Staff", "Supervisor", "Admin"])
