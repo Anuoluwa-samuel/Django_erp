@@ -27,7 +27,7 @@
       <td class="px-4 py-2 border">{{ r.requester.username }}</td>
       <td class="px-4 py-2 border">
   {% if r.status == 'pending' %}
-    {% if is_admin_or_supervisor %}
+    {% if is_admin %}
       <a href="{% url 'approve_request' r.id %}" class="text-green-600 hover:underline">Approve</a> |
       <a href="{% url 'decline_request' r.id %}" class="text-red-600 hover:underline">Decline</a>
     {% else %}
