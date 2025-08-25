@@ -77,9 +77,7 @@ def quotation_list(request):
 @group_required(["Staff", "Supervisor", "Admin"])
 def purchase_request_list(request):
     requests = RequestForMaterials.objects.all()
-    return render(request, 'purchases/purchase_list.html', 
-                  {'requests': requests, 
-                  'is_admin': is_admin})
+    return render(request, 'purchases/purchase_list.html', {'requests': requests},)
 
 @login_required
 @group_required(["Staff", "Supervisor", "Admin"])
