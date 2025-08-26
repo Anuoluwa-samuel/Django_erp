@@ -85,7 +85,7 @@ def product_list(request):
 @login_required
 @user_passes_test(is_inventory)
 def order_list(request):
-    if request.user.is_superuser:
+    if request.user.is_staff:
         orders = Order.objects.all()
     else:
         staff = Staff.objects.get(user=request.user)
