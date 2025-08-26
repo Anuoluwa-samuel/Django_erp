@@ -9,7 +9,6 @@ from accounts.permissions import group_required
 
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def create_purchase_request(request):
     if request.method == 'POST':
         item = request.POST['item']
@@ -28,7 +27,6 @@ def create_purchase_request(request):
     return render(request, 'purchases/create_request.html')
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def rfq(request):
     req = RequestForQuote.objects.all()
     return render(request, 'purchases/rfq_list.html', {'req': req})
@@ -36,7 +34,6 @@ def rfq(request):
 
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def create_rfq(request):
     if request.method == 'POST':
         material_id = request.POST['material_request']
@@ -65,7 +62,6 @@ def create_rfq(request):
 
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def quotation_list(request):
     quotations = QuotationReceived.objects.select_related('rfq', 'rfq__material_request', 'rfq__vendor')
     return render(request, 'purchases/quotation_list.html', {
@@ -74,13 +70,11 @@ def quotation_list(request):
 
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def purchase_request_list(request):
     requests = RequestForMaterials.objects.all()
     return render(request, 'purchases/purchase_list.html', {'requests': requests},)
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def submit_quotation(request):
     if request.method == 'POST':
         rfq = get_object_or_404(RequestForQuote, id=request.POST['rfq'])
@@ -97,7 +91,6 @@ def submit_quotation(request):
     return render(request, 'purchases/submit_quotations.html', {'rfq': rfq})
 
 @login_required
-@group_required(["Admin"])
 def create_vendor(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -139,13 +132,11 @@ def decline_request(request, request_id):
     return redirect('purchase_request_list')
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def purchase_order_list(request):
     orders = PurchaseOrder.objects.all()
     return render(request, 'purchases/purchase_order_list.html', {'orders': orders})
 
 @login_required
-@group_required(["Staff", "Supervisor", "Admin"])
 def vendor_list(request):
     vendors = Vendor.objects.all()
     return render(request, 'purchases/vendor.html', {'vendors': vendors})
@@ -167,7 +158,6 @@ def edit_vendor(request, pk):
     return render(request, 'purchases/edit_vendor.html', {'vendor': vendor})
 
 @login_required
-@group_required(["Admin"])
 def delete_vendor(request, pk):
     vendor = get_object_or_404(Vendor, pk=pk)
 
