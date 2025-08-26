@@ -11,32 +11,10 @@ from django.contrib.auth.models import User
 def is_inventory(user):
     return user.groups.filter(name__in=["Inventory Supervisor", "Inventory Staff"]).exists()
 
-class Index(TemplateView):
-    template_name = 'dashboard.html'
-
-
-class SignUpView(View):
-    def get(self, request):
-        form = UserRegisterForm()
-        return render(request, 'inventory/signup.html', {'form': form})
-
-    def post(self, request): 
-        form = UserRegisterForm(request.POST)
-        
-        if form.is_valid():
-            form.save()
-            user = authenticate(
-                username=form.cleaned_data['username'],
-                password=form.cleaned_data['password1']
-            )
-
-            login(request, user)
-            return redirect ('index')
-        return render(request, 'inventory/signup.html', {'form': form}) 
-
 
 
 @login_required
+
 def inventory_list(request):
     products = Product.objects.all()
     return render(request, 'inventory/base_inventory.html', {'products': products})
