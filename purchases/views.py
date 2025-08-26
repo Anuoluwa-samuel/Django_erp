@@ -70,6 +70,7 @@ def quotation_list(request):
 
 
 @login_required
+@user_passes_test(is_purchases)
 def purchase_request_list(request):
     requests = RequestForMaterials.objects.all()
     return render(request, 'purchases/purchase_list.html', {'requests': requests},)
