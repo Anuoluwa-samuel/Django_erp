@@ -20,6 +20,7 @@ def inventory_list(request):
     return render(request, 'inventory/base_inventory.html', {'products': products})
 
 @login_required
+@user_passes_test(is_inventory)
 def create_product(request):
     if request.method == 'POST':
         category_id = request.POST.get('category_id')
@@ -48,6 +49,7 @@ def create_product(request):
     return render(request, 'inventory/create_product.html', {'categories': categories})
 
 @login_required
+@user_passes_test(is_inventory)
 def edit_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     categories = Category.objects.all()
@@ -64,6 +66,7 @@ def edit_product(request, product_id):
     return render(request, 'inventory/edit_product.html', {'product': product, 'categories': categories})
 
 @login_required
+@user_passes_test(is_inventory)
 def delete_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 
@@ -74,12 +77,11 @@ def delete_product(request, product_id):
     return render(request, 'inventory/delete_product.html', {'product': product})
 
 @login_required
+@user_passes_test(is_inventory)
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'inventory/product_list.html', {'products': products})
 
-def is_admin(user):
-    return user.is_superuser
 
 @user_passes_test(is_admin)
 def staff_list(request):
