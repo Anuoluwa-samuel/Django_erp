@@ -9,6 +9,6 @@ def is_inventory(user):
     return user.groups.filter(name__in=["Inventory Supervisor", "Inventory Staff"]).exists()
 
 def is_purchases(user):
-    return user.groups.filter(name__in=["Purchases Supervisor", "Purchases Staff"]).exists()
+    return user.groups.filter(name__in=["+*Purchases Supervisor", "Purchases Staff"]).exists()
 
 
