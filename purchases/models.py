@@ -21,16 +21,7 @@ class PurchaseRequest(models.Model):
     def __str__(self):
         return f"{self.item} - {self.quantity} ({self.status})"
 
-class PurchaseOrder(models.Model):
-    vendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
-    item_name = models.CharField(max_length=255, null=True, blank=True)
-    quantity = models.PositiveIntegerField()
-    status = models.CharField(max_length=20, choices=[('pending', 'Pending'), ('completed', 'Completed')], default='pending')
-    created_at = models.DateTimeField(auto_now_add=True)
-    requested_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
-    def __str__(self):
-        return f"PO for {self.item_name} from {self.vendor.name}"
 
 class RequestForMaterials(models.Model):
     MATERIAL_STATUS = [
