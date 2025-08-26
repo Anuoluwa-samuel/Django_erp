@@ -82,13 +82,14 @@ def product_list(request):
     products = Product.objects.all()
     return render(request, 'inventory/product_list.html', {'products': products})
 
-
-@user_passes_test(is_admin)
+@login_required
+@user_passes_test(is_inventory)
 def staff_list(request):
     staff = Staff.objects.all()
     return render(request, 'inventory/staff_list.html', {'staff': staff})
 
 @login_required
+@user_passes_test(is_inventory)
 def order_list(request):
     if request.user.is_superuser:
         orders = Order.objects.all()
@@ -99,6 +100,7 @@ def order_list(request):
     return render(request, 'inventory/order_list.html', {'orders': orders})
 
 @login_required
+@user_passes_test(is_inventory)
 def create_order(request):
     products = Product.objects.all()
     staff = Staff.objects.all()
@@ -116,6 +118,7 @@ def create_order(request):
     return render(request, 'inventory/create_order.html', {'products': products, 'staff': staff})
 
 @login_required
+@user_passes_test(is_inventory)
 def create_staff(request):
     if request.method == 'POST':
         user_id = request.POST.get('user')
@@ -138,7 +141,9 @@ def create_staff(request):
     
     users = User.objects.all() # user is passed here for GET request 
     return render(request, 'inventory/create_staff.html', {'users': users})
+
 @login_required
+@user_passes_test(is_inventory)
 def edit_staff(request, staff_id):
     staff = get_object_or_404(Staff, id=staff_id)
 
@@ -152,6 +157,7 @@ def edit_staff(request, staff_id):
     return render(request, 'inventory/edit_staff.html', {'staff': staff})
 
 @login_required
+@user_passes_test(is_inventory)
 def delete_staff(request, staff_id):
     staff = get_object_or_404(Staff, id=staff_id)
 
@@ -163,6 +169,7 @@ def delete_staff(request, staff_id):
     return render(request, 'inventory/delete_staff.html', {'staff': staff})
 
 @login_required
+@user_passes_test(is_inventory)
 def staff_list(request):
     staff = Staff.objects.all()
     return render(request, 'inventory/staff_list.html', {'staff': staff})
