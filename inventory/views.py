@@ -24,12 +24,12 @@ def create_product(request):
         new_category = request.POST.get('new_category', '').strip()
 
         if new_category:  
-            # Create the category if it doesn't exist already
+            
             category_instance, created = Category.objects.get_or_create(name=new_category)
         elif category_id:  
             category_instance = Category.objects.get(id=category_id)
         else:
-            category_instance = None  # In case category is optional
+            category_instance = None  
 
         Product.objects.create(
             name=request.POST['name'],
