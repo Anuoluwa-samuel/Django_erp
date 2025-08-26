@@ -4,7 +4,8 @@ from .models import RequestForMaterials, Vendor, RequestForQuote, QuotationRecei
 from django.contrib import messages
 
 
-
+def is_purchases(user):
+    return user.groups.filter(name__in=["Purchases Supervisor", "Purchases Staff"]).exists() or user.is_superuser
 
 
 @login_required
