@@ -85,8 +85,12 @@ def product_list(request):
 @login_required
 @user_passes_test(is_inventory)
 def order_list(request):
-    staff = Staff.objects.get(user=request.user)
-    orders = Order.objects.filter(staff=staff)
+    if request.user.is_superuser:
+        orders = Order.objects.all()
+    else:
+        staff = Staff.objects.get(user=request.user)
+        orders = Order.objects.filter(staff=staff)
+
     return render(request, 'inventory/order_list.html', {'orders': orders})
 
 @login_required
