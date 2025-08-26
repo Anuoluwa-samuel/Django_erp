@@ -14,7 +14,7 @@ def is_inventory(user):
 
 
 @login_required
-
+@user_passes_test(is_inventory)
 def inventory_list(request):
     products = Product.objects.all()
     return render(request, 'inventory/base_inventory.html', {'products': products})
