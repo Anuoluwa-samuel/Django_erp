@@ -17,3 +17,4 @@ urlpatterns = [
     path('orders/', views.purchase_order_list, name='purchase_order_list'),
 
 ]
++++
