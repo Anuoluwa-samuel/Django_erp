@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 
 
+def is_inventory(user):
+    return user.groups.filter(name__in=["Inventory Supervisor", "Inventory Staff"]).exists()
 
 class Index(TemplateView):
     template_name = 'dashboard.html'
