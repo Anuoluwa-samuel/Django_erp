@@ -84,12 +84,6 @@ def product_list(request):
 
 @login_required
 @user_passes_test(is_inventory)
-def staff_list(request):
-    staff = Staff.objects.all()
-    return render(request, 'inventory/staff_list.html', {'staff': staff})
-
-@login_required
-@user_passes_test(is_inventory)
 def order_list(request):
     if request.user.is_superuser:
         orders = Order.objects.all()
@@ -139,7 +133,7 @@ def create_staff(request):
         return redirect('staff_list')
 
     
-    users = User.objects.all() # user is passed here for GET request 
+    users = User.objects.all()  
     return render(request, 'inventory/create_staff.html', {'users': users})
 
 @login_required
