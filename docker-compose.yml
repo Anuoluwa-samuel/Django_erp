@@ -20,7 +20,7 @@ services:
     container_name: synestra_web
     # For development (auto-reload), use the command below instead of gunicorn:
     # command: python manage.py runserver 0.0.0.0:8000
-    command: gunicorn synestra.wsgi:application --bind 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app            # live code sync (great for dev)
     ports:
