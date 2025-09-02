@@ -32,7 +32,7 @@
   },
 
   {
-    "model": "purchases.purchaserequest_",
+    "model": "purchases.purchase_request",
     "pk": 1,
     "fields": { "requester": 1, "item": "Dell Latitude 5420 Laptop", "quantity": 5, "description": "For dev team", "requested_at": "2025-09-01T09:00:00Z", "status": "pending" }
   },
@@ -64,32 +64,32 @@
 
 
   {
-    "model": "purchases.purchaseorder",
+    "model": "purchases.purchas_eorder",
     "pk": 1,
     "fields": { "vendor": 1, "item_name": "Dell Latitude 5420 Laptop", "quantity": 5, "status": "pending", "created_at": "2025-09-02T09:30:00Z", "requested_by": 1 }
   },
   {
-    "model": "purchases.purchaseorder",
+    "model": "purchases.purchas_eorder",
     "pk": 2,
     "fields": { "vendor": 2, "item_name": "HP LaserJet Pro Printer", "quantity": 2, "status": "completed", "created_at": "2025-09-02T09:45:00Z", "requested_by": 2 }
   },
   {
-    "model": "purchases.purchaseorder",
+    "model": "purchases.purchas_eorder",
     "pk": 3,
     "fields": { "vendor": 3, "item_name": "Cisco Switch", "quantity": 3, "status": "pending", "created_at": "2025-09-02T10:00:00Z", "requested_by": 3 }
   },
   {
-    "model": "purchases.purchaseorder",
+    "model": "purchases.purchas_eorder",
     "pk": 4,
     "fields": { "vendor": 4, "item_name": "Office Chairs", "quantity": 10, "status": "pending", "created_at": "2025-09-02T10:15:00Z", "requested_by": 4 }
   },
   {
-    "model": "purchases.purchaseorder",
+    "model": "purchases.purchas_eorder",
     "pk": 5,
     "fields": { "vendor": 5, "item_name": "External Hard Drives", "quantity": 6, "status": "completed", "created_at": "2025-09-02T10:30:00Z", "requested_by": 5 }
   },
   {
-    "model": "purchases.purchaseorder",
+    "model": "purchases.purchas_eorder",
     "pk": 6,
     "fields": { "vendor": 6, "item_name": "Projectors", "quantity": 2, "status": "pending", "created_at": "2025-09-02T10:45:00Z", "requested_by": 1 }
   },
