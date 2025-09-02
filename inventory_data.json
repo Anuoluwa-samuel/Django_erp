@@ -24,11 +24,12 @@
 
 
 
-  { "model": "inventory.order", "pk": 1, "fields": { "staff": 1, "product": 1, "quantity": 2, "status": "pending" } },
-  { "model": "inventory.order", "pk": 2, "fields": { "staff": 2, "product": 2, "quantity": 5, "status": "approved" } },
-  { "model": "inventory.order", "pk": 3, "fields": { "staff": 3, "product": 3, "quantity": 10, "status": "declined" } },
-  { "model": "inventory.order", "pk": 4, "fields": { "staff": 4, "product": 4, "quantity": 1, "status": "pending" } },
-  { "model": "inventory.order", "pk": 5, "fields": { "staff": 5, "product": 5, "quantity": 3, "status": "approved" } },
-  { "model": "inventory.order", "pk": 6, "fields": { "staff": 6, "product": 6, "quantity": 2, "status": "pending" } }
+  { "model": "inventory.order", "pk": 1, "fields": { "staff": 1, "product": 1, "quantity": 2, "status": "pending", "requested_at": "2025-09-02T21:30:00Z" } },
+  { "model": "inventory.order", "pk": 2, "fields": { "staff": 2, "product": 2, "quantity": 5, "status": "approved", "requested_at": "2025-09-02T21:31:00Z" } },
+  { "model": "inventory.order", "pk": 3, "fields": { "staff": 3, "product": 3, "quantity": 10, "status": "declined", "requested_at": "2025-09-02T21:32:00Z" } },
+  { "model": "inventory.order", "pk": 4, "fields": { "staff": 4, "product": 4, "quantity": 1, "status": "pending", "requested_at": "2025-09-02T21:33:00Z" } },
+  { "model": "inventory.order", "pk": 5, "fields": { "staff": 5, "product": 5, "quantity": 3, "status": "approved", "requested_at": "2025-09-02T21:34:00Z" } },
+  { "model": "inventory.order", "pk": 6, "fields": { "staff": 6, "product": 6, "quantity": 2, "status": "pending", "requested_at": "2025-09-02T21:35:00Z" } }
+
 
 ]
