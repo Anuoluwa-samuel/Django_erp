@@ -17,7 +17,7 @@ services:
 
   web:
     build: .
-    container_name: synestra_web
+    container_name: E
     # For development (auto-reload), use the command below instead of gunicorn:
     # command: python manage.py runserver 0.0.0.0:8000
     command: python manage.py runserver 0.0.0.0:8000
