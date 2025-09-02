@@ -17,7 +17,7 @@
     "model": "auth.user",
     "pk": 2,
     "fields": {
-      "username": "john_doe",
+      "username": "precious",
       "email": "john@example.com",
       "first_name": "John",
       "last_name": "Doe",
@@ -31,7 +31,7 @@
     "model": "auth.user",
     "pk": 3,
     "fields": {
-      "username": "jane_smith",
+      "username": "sammiat",
       "email": "jane@example.com",
       "first_name": "Jane",
       "last_name": "Smith",
