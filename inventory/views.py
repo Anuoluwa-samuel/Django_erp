@@ -58,7 +58,7 @@ def edit_product(request, product_id):
         product.quantity = request.POST['quantity']
         product.unit_price = request.POST['unit_price']
         product.save()
-        return redirect('inventory_list')
+        return redirect('product_list')
 
     return render(request, 'inventory/edit_product.html', {'product': product, 'categories': categories})
 
