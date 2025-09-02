@@ -3,7 +3,7 @@ name: tenants
 services:
   mysql:
     image: mysql:8
-    container_name: Ayomide
+    container_name: mysql_container
     ports:
       - "3307:3306" 
     environment:
