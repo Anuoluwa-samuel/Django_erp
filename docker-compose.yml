@@ -1,0 +1,18 @@
+name: tenants
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: Ayomide
+    ports:
+      - "3307:3306" 
+    environment:
+      MYSQL_ROOT_PASSWORD: Ay_mide17.   
+      MYSQL_DATABASE: erp_project          
+      MYSQL_USER: Ayomide             
+      MYSQL_PASSWORD: pasword        
+    volumes:
+      - mysql-data:/var/lib/mysql 
+
+volumes:
+  mysql-data:
