@@ -1,6 +1,6 @@
 [
   {
-    "model": "yourapp.vendor",
+    "model": "purchases.vendor",
     "pk": 1,
     "fields": {
       "name": "TechWorld Ltd.",
@@ -10,7 +10,7 @@
     }
   },
   {
-    "model": "yourapp.vendor",
+    "model": "purchases.vendor",
     "pk": 2,
     "fields": {
       "name": "Future Supplies",
@@ -20,7 +20,7 @@
     }
   },
   {
-    "model": "yourapp.vendor",
+    "model": "purchases.vendor",
     "pk": 3,
     "fields": {
       "name": "Global Hardware",
@@ -30,7 +30,7 @@
     }
   },
   {
-    "model": "yourapp.vendor",
+    "model": "purchases.vendor",
     "pk": 4,
     "fields": {
       "name": "Prime Ventures",
@@ -40,7 +40,7 @@
     }
   },
   {
-    "model": "yourapp.vendor",
+    "model": "purchases.vendor",
     "pk": 5,
     "fields": {
       "name": "Skyline Traders",
