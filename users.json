@@ -3,12 +3,12 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-      "username": "eze",
-      "email": "eze@example.com",
+      "username": "admin",
+      "email": "admin@example.com",
       "first_name": "System",
       "last_name": "Admin",
       "is_staff": true,
-      "is_superuser": false,
+      "is_superuser": true,
       "is_active": true,
       "password": "password"
     }
