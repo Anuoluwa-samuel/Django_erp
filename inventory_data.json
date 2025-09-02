@@ -15,12 +15,13 @@
   { "model": "inventory.category", "pk": 6, "fields": { "name": "Accessories" } },
 
 
-  { "model": "inventory.product", "pk": 1, "fields": { "name": "Laptop", "category": 1, "description": "Dell Latitude", "quantity": 10, "unit_price": "350000.00" } },
-  { "model": "inventory.product", "pk": 2, "fields": { "name": "Office Chair", "category": 2, "description": "Ergonomic chair", "quantity": 20, "unit_price": "55000.00" } },
-  { "model": "inventory.product", "pk": 3, "fields": { "name": "Pen Pack", "category": 3, "description": "Blue ink pens", "quantity": 100, "unit_price": "500.00" } },
-  { "model": "inventory.product", "pk": 4, "fields": { "name": "Rice Bag", "category": 4, "description": "50kg bag of rice", "quantity": 50, "unit_price": "28000.00" } },
-  { "model": "inventory.product", "pk": 5, "fields": { "name": "T-shirt", "category": 5, "description": "Cotton white T-shirt", "quantity": 60, "unit_price": "2500.00" } },
-  { "model": "inventory.product", "pk": 6, "fields": { "name": "Wristwatch", "category": 6, "description": "Digital wristwatch", "quantity": 15, "unit_price": "15000.00" } },
+  { "model": "inventory.product", "pk": 1, "fields": { "name": "Laptop", "category": 1, "description": "Dell Latitude", "quantity": 10, "unit_price": "350000.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 2, "fields": { "name": "Office Chair", "category": 2, "description": "Ergonomic chair", "quantity": 20, "unit_price": "55000.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 3, "fields": { "name": "Pen Pack", "category": 3, "description": "Blue ink pens", "quantity": 100, "unit_price": "500.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 4, "fields": { "name": "Rice Bag", "category": 4, "description": "50kg bag of rice", "quantity": 50, "unit_price": "28000.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 5, "fields": { "name": "T-shirt", "category": 5, "description": "Cotton white T-shirt", "quantity": 60, "unit_price": "2500.00", "added_on": "2025-09-02T21:00:00Z" } },
+  { "model": "inventory.product", "pk": 6, "fields": { "name": "Wristwatch", "category": 6, "description": "Digital wristwatch", "quantity": 15, "unit_price": "15000.00", "added_on": "2025-09-02T21:00:00Z" } }
+
 
 
   { "model": "inventory.order", "pk": 1, "fields": { "staff": 1, "product": 1, "quantity": 2, "status": "pending" } },
