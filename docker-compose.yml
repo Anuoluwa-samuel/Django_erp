@@ -1,18 +1,32 @@
-name: tenants
+version: '3.9'
 
 services:
-  mysql:
+  db:
     image: mysql:8
-    container_name: mysql_container
-    ports:
-      - "3307:3306" 
+    container_name: synestra_db
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: Ay_mide17.   
-      MYSQL_DATABASE: erp_project          
-      MYSQL_USER: Ayomide             
-      MYSQL_PASSWORD: pasword        
+      MYSQL_DATABASE: synestra_db
+      MYSQL_USER: synestra_user
+      MYSQL_PASSWORD: synestra_pass
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3307:3306"       # host:container (change 3307 if it's busy)
     volumes:
-      - mysql-data:/var/lib/mysql 
+      - db_data:/var/lib/mysql
+
+  web:
+    build: .
+    container_name: synestra_web
+    # For development (auto-reload), use the command below instead of gunicorn:
+    # command: python manage.py runserver 0.0.0.0:8000
+    command: gunicorn synestra.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/app            # live code sync (great for dev)
+    ports:
+      - "8000:8000"       # open Django on your machine at http://127.0.0.1:8000
+    depends_on:
+      - db
 
 volumes:
-  mysql-data:
+  db_data:
