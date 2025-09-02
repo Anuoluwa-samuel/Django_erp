@@ -32,32 +32,32 @@
   },
 
   {
-    "model": "purchases.purchaserequest",
+    "model": "purchases.purchaserequest_",
     "pk": 1,
     "fields": { "requester": 1, "item": "Dell Latitude 5420 Laptop", "quantity": 5, "description": "For dev team", "requested_at": "2025-09-01T09:00:00Z", "status": "pending" }
   },
   {
-    "model": "purchases.purchaserequest",
+    "model": "purchases.purchase_request",
     "pk": 2,
     "fields": { "requester": 2, "item": "HP LaserJet Pro Printer", "quantity": 2, "description": "Needed in admin office", "requested_at": "2025-09-01T10:00:00Z", "status": "approved" }
   },
   {
-    "model": "purchases.purchaserequest",
+    "model": "purchases.purchase_request",
     "pk": 3,
     "fields": { "requester": 3, "item": "Cisco Switch", "quantity": 3, "description": "Networking upgrade", "requested_at": "2025-09-01T11:00:00Z", "status": "declined" }
   },
   {
-    "model": "purchases.purchaserequest",
+    "model": "purchases.purchase_request",
     "pk": 4,
     "fields": { "requester": 4, "item": "Office Chairs", "quantity": 10, "description": "For new staff", "requested_at": "2025-09-01T12:00:00Z", "status": "pending" }
   },
   {
-    "model": "purchases.purchaserequest",
+    "model": "purchases.purchase_request",
     "pk": 5,
     "fields": { "requester": 5, "item": "External Hard Drives", "quantity": 6, "description": "For backups", "requested_at": "2025-09-01T13:00:00Z", "status": "approved" }
   },
   {
-    "model": "purchases.purchaserequest",
+    "model": "purchases.purchase_request",
     "pk": 6,
     "fields": { "requester": 1, "item": "Projectors", "quantity": 2, "description": "For training rooms", "requested_at": "2025-09-01T14:00:00Z", "status": "pending" }
   },
