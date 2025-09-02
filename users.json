@@ -1,38 +1,72 @@
 [
   {
-    "model": "purchases.purchase_request",
+    "model": "auth.user",
     "pk": 1,
     "fields": {
-      "requester": 1,
-      "item": "Dell Latitude 5420 Laptop",
-      "quantity": 5,
-      "description": "For the new development team members.",
-      "requested_at": "2025-09-01T10:30:00Z",
-      "status": "pending"
+      "username": "admin",
+      "email": "admin@example.com",
+      "first_name": "System",
+      "last_name": "Admin",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "password": "pbkdf2_sha256$600000$0U2UgT6h5Kpo5h5wKf0sEh$hM5RccH9doMBJmn9szmDq2HDu6I6qVZ7AjDBzXFXMkw="
     }
   },
   {
-    "model": "purchases.purchase_request",
+    "model": "auth.user",
     "pk": 2,
     "fields": {
-      "requester": 1,
-      "item": "HP LaserJet Pro Printer",
-      "quantity": 2,
-      "description": "Printers needed for the admin office.",
-      "requested_at": "2025-09-01T11:15:00Z",
-      "status": "approved"
+      "username": "john_doe",
+      "email": "john@example.com",
+      "first_name": "John",
+      "last_name": "Doe",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "password": "pbkdf2_sha256$600000$0U2UgT6h5Kpo5h5wKf0sEh$hM5RccH9doMBJmn9szmDq2HDu6I6qVZ7AjDBzXFXMkw="
     }
   },
   {
-    "model": "purchases.purchase_request",
+    "model": "auth.user",
     "pk": 3,
     "fields": {
-      "requester": 1,
-      "item": "Cisco Switch",
-      "quantity": 3,
-      "description": "Networking upgrade for IT department.",
-      "requested_at": "2025-09-01T12:00:00Z",
-      "status": "declined"
+      "username": "jane_smith",
+      "email": "jane@example.com",
+      "first_name": "Jane",
+      "last_name": "Smith",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "password": "pbkdf2_sha256$600000$0U2UgT6h5Kpo5h5wKf0sEh$hM5RccH9doMBJmn9szmDq2HDu6I6qVZ7AjDBzXFXMkw="
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "username": "aisha_bello",
+      "email": "aisha@example.com",
+      "first_name": "Aisha",
+      "last_name": "Bello",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "password": "pbkdf2_sha256$600000$0U2UgT6h5Kpo5h5wKf0sEh$hM5RccH9doMBJmn9szmDq2HDu6I6qVZ7AjDBzXFXMkw="
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "username": "michael_brown",
+      "email": "michael@example.com",
+      "first_name": "Michael",
+      "last_name": "Brown",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "password": "pbkdf2_sha256$600000$0U2UgT6h5Kpo5h5wKf0sEh$hM5RccH9doMBJmn9szmDq2HDu6I6qVZ7AjDBzXFXMkw="
     }
   }
 ]
