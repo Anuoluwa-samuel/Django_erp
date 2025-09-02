@@ -98,7 +98,7 @@ DATABASES = {
         'NAME': 'erp_project',
         'USER': 'Ayomide',
         'PASSWORD': 'password',  
-        'HOST': '127.0.0.1',
+        'HOST': 'db',
         'PORT': '3307',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
