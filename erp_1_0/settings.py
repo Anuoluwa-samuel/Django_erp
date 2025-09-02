@@ -95,9 +95,9 @@ WSGI_APPLICATION = "erp_1_0.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
-        'USER': 'myuser',
-        'PASSWORD': 'mypassword',
+        'NAME': 'postgres',
+        'USER': 'Ayomide',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',  
         'PORT': '5432',
     }
