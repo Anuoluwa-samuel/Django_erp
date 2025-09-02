@@ -45,7 +45,7 @@
     "model": "auth.user",
     "pk": 4,
     "fields": {
-      "username": "aisha_bello",
+      "username": "temitope",
       "email": "aisha@example.com",
       "first_name": "Aisha",
       "last_name": "Bello",
