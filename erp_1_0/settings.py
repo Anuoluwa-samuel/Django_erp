@@ -94,15 +94,12 @@ WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'erp_project',
-        'USER': 'Ayomide',
-        'PASSWORD': 'password',  
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'USER': 'myuser',
+        'PASSWORD': 'mypassword',
+        'HOST': 'localhost',  
+        'PORT': '5432',
     }
 }
 
