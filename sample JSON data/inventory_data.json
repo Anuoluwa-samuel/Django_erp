@@ -80,7 +80,7 @@
   { "model": "inventory.category", "pk": 5, "fields": { "name": "Clothing" } },
   { "model": "inventory.category", "pk": 6, "fields": { "name": "Accessories" } },
 
-  // Products
+
   { "model": "inventory.product", "pk": 1, "fields": { "name": "Laptop", "category": 1, "description": "Dell Latitude", "quantity": 10, "unit_price": "350000.00" } },
   { "model": "inventory.product", "pk": 2, "fields": { "name": "Office Chair", "category": 2, "description": "Ergonomic chair", "quantity": 20, "unit_price": "55000.00" } },
   { "model": "inventory.product", "pk": 3, "fields": { "name": "Pen Pack", "category": 3, "description": "Blue ink pens", "quantity": 100, "unit_price": "500.00" } },
@@ -88,7 +88,7 @@
   { "model": "inventory.product", "pk": 5, "fields": { "name": "T-shirt", "category": 5, "description": "Cotton white T-shirt", "quantity": 60, "unit_price": "2500.00" } },
   { "model": "inventory.product", "pk": 6, "fields": { "name": "Wristwatch", "category": 6, "description": "Digital wristwatch", "quantity": 15, "unit_price": "15000.00" } },
 
-  // Orders
+
   { "model": "inventory.order", "pk": 1, "fields": { "staff": 1, "product": 1, "quantity": 2, "status": "pending" } },
   { "model": "inventory.order", "pk": 2, "fields": { "staff": 2, "product": 2, "quantity": 5, "status": "approved" } },
   { "model": "inventory.order", "pk": 3, "fields": { "staff": 3, "product": 3, "quantity": 10, "status": "declined" } },
