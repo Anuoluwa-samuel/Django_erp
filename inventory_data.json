@@ -5,7 +5,7 @@
   { "model": "inventory.staff", "pk": 3, "fields": { "user": 3, "role": "Technician", "phone": "08033333333" } },
   { "model": "inventory.staff", "pk": 4, "fields": { "user": 4, "role": "Clerk", "phone": "08044444444" } },
   { "model": "inventory.staff", "pk": 5, "fields": { "user": 5, "role": "Storekeeper", "phone": "08055555555" } },
-  { "model": "inventory.staff", "pk": 6, "fields": { "user": 6, "role": "Assistant", "phone": "08066666666" } },
+  { "model": "inventory.staff", "pk": 6, "fields": { "user": 1, "role": "Assistant", "phone": "08066666666" } },
 
   { "model": "inventory.category", "pk": 1, "fields": { "name": "Electronics" } },
   { "model": "inventory.category", "pk": 2, "fields": { "name": "Furniture" } },
