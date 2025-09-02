@@ -2,7 +2,7 @@ name: tenants
 
 services:
   postgres:
-    image: postgres
+    image: postgres:17
     container_name: postgres-container
     ports:
       - "5432:5432"
