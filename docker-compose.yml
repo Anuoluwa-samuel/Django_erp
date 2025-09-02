@@ -6,10 +6,10 @@ services:
     container_name: ERP
     restart: always
     environment:
-      MYSQL_DATABASE: synestra_db
-      MYSQL_USER: synestra_user
-      MYSQL_PASSWORD: synestra_pass
-      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: erp_project
+      MYSQL_USER: Ayomide
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: Ay_mide17.
     ports:
       - "3307:3306"       # host:container (change 3307 if it's busy)
     volumes:
