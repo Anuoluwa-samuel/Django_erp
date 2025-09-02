@@ -1,4 +1,4 @@
-
+name: tenants
 
 services:
   db:
