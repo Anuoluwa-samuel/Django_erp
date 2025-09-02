@@ -3,7 +3,7 @@ name: tenants
 services:
   db:
     image: mysql:8
-    container_name: ERP
+    container_name: mysql-container
     restart: always
     environment:
       MYSQL_DATABASE: erp_project
