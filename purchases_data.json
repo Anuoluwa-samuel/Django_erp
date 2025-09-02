@@ -31,7 +31,6 @@
     "fields": { "name": "NextGen Equipments", "contact_person": "Samuel Ade", "email": "samuel@nextgen.com", "phone": "+2348056789123" }
   },
 
-  // --- Purchase Requests ---
   {
     "model": "purchases.purchaserequest",
     "pk": 1,
@@ -63,7 +62,7 @@
     "fields": { "requester": 1, "item": "Projectors", "quantity": 2, "description": "For training rooms", "requested_at": "2025-09-01T14:00:00Z", "status": "pending" }
   },
 
-  // --- Purchase Orders ---
+
   {
     "model": "purchases.purchaseorder",
     "pk": 1,
@@ -95,7 +94,7 @@
     "fields": { "vendor": 6, "item_name": "Projectors", "quantity": 2, "status": "pending", "created_at": "2025-09-02T10:45:00Z", "requested_by": 1 }
   },
 
-  // --- Request For Materials ---
+
   {
     "model": "purchases.requestformaterials",
     "pk": 1,
@@ -127,7 +126,6 @@
     "fields": { "requester": 2, "item_name": "Extension Cords", "quantity": 10, "description": "For office setup", "requested_at": "2025-09-02T12:15:00Z", "status": "pending" }
   },
 
-  // --- Request For Quote ---
   {
     "model": "purchases.requestforquote",
     "pk": 1,
@@ -159,7 +157,6 @@
     "fields": { "material_request": 6, "vendor": 6, "quantity": 10, "requested_at": "2025-09-02T13:45:00Z", "deadline": "2025-09-10" }
   },
 
-  // --- Quotation Received ---
   {
     "model": "purchases.quotationreceived",
     "pk": 1,
