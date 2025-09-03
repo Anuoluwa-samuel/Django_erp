@@ -159,8 +159,8 @@ DATABASE_ROUTERS = {
 }
 
 
-TENANT_MODEL ="tenant_manager"
-TENANT_DOMAIN_MODEL =""
+TENANT_MODEL ="tenant_manager.Tenant"
+TENANT_DOMAIN_MODEL ="tenant_manager.Domain"
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
