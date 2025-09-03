@@ -57,7 +57,9 @@ SHARED_APPS = [
     "crispy_bootstrap5",
 ]
 
-
+TENANT_APPS = [
+    
+]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
