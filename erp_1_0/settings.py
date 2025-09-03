@@ -50,7 +50,7 @@ SHARED_APPS = [
     "purchases",
     "CRM",
     "django_htmx"
-    ""
+    "colorfield"
     "Accounting",
     "HR",
     "Sales",
