@@ -3,7 +3,7 @@ from dashboard.models import SiteSetting
 
 register = Library() 
 
-@register.inclusion_tag('includes/header.html') 
+@register.inclusion_tag('dashboard.html') 
 def header_view(request):
     branding = SiteSetting.objects.first()
     if branding:
