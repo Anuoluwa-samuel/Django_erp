@@ -159,7 +159,7 @@ DATABASE_ROUTERS = {
 }
 
 
-TENANT_MODEL =""
+TENANT_MODEL ="tenant_manager"
 TENANT_DOMAIN_MODEL =""
 
 # Internationalization
