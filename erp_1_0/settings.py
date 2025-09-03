@@ -81,13 +81,13 @@ TENANT_APPS = [
 ]
 
 INSTALLED_APPS = SHARED_APPS + [
-    app for app in TENANT_APPS
+    app for app in TENANT_APPS if app not in SHARED_APPS
 ]
-
 
 SITE_ID = 1
 
 MIDDLEWARE = [
+    "django"
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
