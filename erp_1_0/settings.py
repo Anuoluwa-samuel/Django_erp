@@ -135,7 +135,14 @@ DATABASES = {
     }
 }
 
+DATABASE_ROUTERS = {
+    "django_tenants.routers.TenantSyncRouter"
+}
 
+
+TENANT_MODEL ="tenant_manager.Tenant"
+TENANT_DOMAIN_MODEL ="tenant_manager.Domain"
+SHOW_PUBLIC_IF_NO_TENANTS
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -155,13 +162,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-DATABASE_ROUTERS = {
-    "django_tenants.routers.TenantSyncRouter"
-}
-
-
-TENANT_MODEL ="tenant_manager.Tenant"
-TENANT_DOMAIN_MODEL ="tenant_manager.Domain"
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
