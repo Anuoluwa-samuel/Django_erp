@@ -1,4 +1,5 @@
 from django.db import models
+from colorfield.fields import ColorField
 
 class SiteSetting(models.Model):
     name = models.CharField(max_length=100)
