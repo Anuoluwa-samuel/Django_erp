@@ -159,9 +159,8 @@ DATABASE_ROUTERS = {
 }
 
 
-TENANT_MODEL
-
-
+TENANT_MODEL =""
+TENANT_DOMAIN_MODEL =""
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
