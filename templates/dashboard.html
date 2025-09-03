@@ -9,7 +9,7 @@
 
 <div class="bg-white p-4 shadow flex justify-between items-center">
     <div>
-        <h1 class="text-2xl font-bold text-blue-800">{%%}  Dashboard</h1>
+        <h1 class="text-2xl font-bold text-blue-800">{% if request.tenant %} {{ request}}  Dashboard</h1>
         <p class="text-sm text-gray-600 mt-1">Welcome, {{ request.user.username }} 👋🏽</p>
     </div>
     <form action="{% url 'logout' %}" method="post">
