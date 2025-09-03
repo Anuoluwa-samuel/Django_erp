@@ -49,6 +49,8 @@ SHARED_APPS = [
     "dashboard",
     "purchases",
     "CRM",
+    "django_htmx"
+    ""
     "Accounting",
     "HR",
     "Sales",
