@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 SHARED_APPS = [
-    "djano_tenants"
+    "django_tenants",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -87,7 +87,7 @@ INSTALLED_APPS = SHARED_APPS + [
 SITE_ID = 1
 
 MIDDLEWARE = [
-    "django_tenants.middleware.main"
+    "django_tenants.middleware.main.TenantMainMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
