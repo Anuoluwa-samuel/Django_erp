@@ -100,6 +100,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "erp_1_0.urls"
 
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
