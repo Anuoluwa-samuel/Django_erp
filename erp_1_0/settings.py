@@ -142,7 +142,7 @@ DATABASE_ROUTERS = {
 
 TENANT_MODEL ="tenant_manager.Tenant"
 TENANT_DOMAIN_MODEL ="tenant_manager.Domain"
-SHOW_PUBLIC_IF_NO_TENANTS
+SHOW_PUBLIC_IF_NO_TENANT_FOUND = True
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
