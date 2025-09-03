@@ -99,7 +99,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "erp_1_0.urls"
-PUBLIC_SCHEMA_URLCONF = "erp_1_0"
+PUBLIC_SCHEMA_URLCONF = "erp_1_0.urls_public"
 
 TEMPLATES = [
     {
