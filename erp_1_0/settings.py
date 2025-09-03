@@ -87,7 +87,7 @@ INSTALLED_APPS = SHARED_APPS + [
 SITE_ID = 1
 
 MIDDLEWARE = [
-    "django"
+    "django_tenants.middleware.main"
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
