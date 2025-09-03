@@ -155,8 +155,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 DATABASE_ROUTERS = {
-    "django_tenants.routers"
+    "django_tenants.routers.TenantSyncRouter"
 }
+
+
+TENANT_MODEL
+
 
 
 # Internationalization
