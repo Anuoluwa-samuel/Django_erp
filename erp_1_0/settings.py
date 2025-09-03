@@ -58,7 +58,24 @@ SHARED_APPS = [
 ]
 
 TENANT_APPS = [
-    
+        "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "dashboard",
+    "purchases",
+    "CRM",
+    "Accounting",
+    "HR",
+    "Sales",
+    "Stock",
+    "accounts",
+    "rest_framework",
+    "inventory",
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
