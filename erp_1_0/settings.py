@@ -80,6 +80,9 @@ TENANT_APPS = [
     "crispy_bootstrap5",
 ]
 
+
+
+
 SITE_ID = 1
 
 MIDDLEWARE = [
