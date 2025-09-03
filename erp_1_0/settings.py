@@ -80,7 +80,9 @@ TENANT_APPS = [
     "crispy_bootstrap5",
 ]
 
-
+INSTALLED_APPS = SHARED_APPS + [
+    app for app in TENANT_APPS
+]
 
 
 SITE_ID = 1
