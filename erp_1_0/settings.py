@@ -16,6 +16,7 @@ env = Env()
 env.read_env()
 
 ENVIRONMENT = env('ENVIRONMENT', default="development")
+ENVIRONMENT = ''
 
 import os
 
