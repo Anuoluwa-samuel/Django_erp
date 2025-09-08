@@ -112,7 +112,7 @@ MIDDLEWARE = [
 ]
 
 if DEBUG:
-    MIDDLEWARE +=
+    MIDDLEWARE +=['django_browser_reload.middleware.BrowserReload']
 
 ROOT_URLCONF = "erp_1_0.urls"
 PUBLIC_SCHEMA_URLCONF = "erp_1_0.urls_public"
