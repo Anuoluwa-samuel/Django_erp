@@ -15,7 +15,7 @@ from environ import Env
 env = Env()
 env.read_env()
 
-ENVIR
+ENVIRONMENT = env('ENVIRONMENT', default="development")
 
 import os
 
