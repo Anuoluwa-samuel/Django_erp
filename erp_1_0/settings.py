@@ -150,8 +150,8 @@ if ENVIRONMENT == 'development':
             'NAME': env('PGDATABASE'),
             'USER': env('PGUSER'),
             'PASSWORD': env('PGPASSWORD'),
-            'HOST': "localhost",
-            'PORT': 5432,
+            'HOST': env('PGHOST'),
+            'PORT': env('PGPORT'),
         }
     }
 
