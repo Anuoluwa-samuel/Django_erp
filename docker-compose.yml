@@ -1,6 +1,7 @@
 name: tenants
 
 services:
+
   postgres:
     image: postgres:16
     container_name: postgres-container
