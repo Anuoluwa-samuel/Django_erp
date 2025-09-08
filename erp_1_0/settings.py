@@ -143,17 +143,17 @@ WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django_tenants.postgresql_backend',
-        'NAME': "postgres",
-        'USER':"postgres",
-        'PASSWORD': "postgres",
-        'HOST': "localhost",
-        'PORT': 5432,
+if ENVIRONMENT == 'development':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django_tenants.postgresql_backend',
+            'NAME': "postgres",
+            'USER':"postgres",
+            'PASSWORD': "postgres",
+            'HOST': "localhost",
+            'PORT': 5432,
+        }
     }
-}
 
 DATABASE_ROUTERS = {
     "django_tenants.routers.TenantSyncRouter"
