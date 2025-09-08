@@ -133,16 +133,29 @@ TEMPLATES = [
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 # Database (works for both dev and prod)
-DATABASES = {
-    "default": {
-        "ENGINE": "django_tenants.postgresql_backend",
-        "NAME": env("PGDATABASE"),
-        "USER": env("PGUSER"),
-        "PASSWORD": env("PGPASSWORD"),
-        "HOST": env("PGHOST"),
-        "PORT": env("PGPORT"),
+if ENVIRONMENT == "development":
+    DATABASES = {
+        "default": {
+            "ENGINE": "django_tenants.postgresql_backend",
+            "NAME": env("POSTGRES_DB"),
+            "USER": env("POSTGRES_USER"),
+            "PASSWORD": env("POSTGRES_PASSWORD"),
+            "HOST": env("PGHOST"),
+            "PORT": env("PGPORT"),
+        }
     }
-}
+else:  # production / Railway
+    DATABASES = {
+        "default": {
+            "ENGINE": "django_tenants.postgresql_backend",
+            "NAME": env("RAILWAY_DB"),
+            "USER": env("RAILWAY_USER"),
+            "PASSWORD": env("RAILWAY_PASSWORD"),
+            "HOST": env("RAILWAY_HOST"),
+            "PORT": env("RAILWAY_PORT"),
+        }
+    }
+
 
 DATABASE_ROUTERS = {
     "django_tenants.routers.TenantSyncRouter"
