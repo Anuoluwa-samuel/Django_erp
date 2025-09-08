@@ -35,9 +35,9 @@ SECRET_KEY = "django-insecure-r)=&b!@+tpno6-i5n*zjgy1y^%3)dk5*!++uc^%-v84!3n&$rr
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
-    DEBU
+    DEBUG = FALSE
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
 
 
 # Application definition
