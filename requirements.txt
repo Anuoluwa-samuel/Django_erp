@@ -9,5 +9,6 @@ psycopg2-binary
 django-environ
 django-tenants
 django-colorfield
+gunicorn
 
 
