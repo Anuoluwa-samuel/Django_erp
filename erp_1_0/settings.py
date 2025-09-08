@@ -132,6 +132,7 @@ TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'templates')]
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 
