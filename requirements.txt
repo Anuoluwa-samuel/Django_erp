@@ -12,4 +12,6 @@ django-colorfield
 gunicorn
 whitenoise 
 djangorestframework
+django-crispy-forms
+crispy-bootstrap5
 
