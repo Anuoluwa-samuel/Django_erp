@@ -55,8 +55,6 @@ SHARED_APPS = [
     "django.contrib.staticfiles",
     "django_cleanup.apps.CleanupConfig",
     "django.contrib.sites",
-    "allauth",
-    "allauth.account",
     "dashboard",
     "purchases",
     "CRM",
