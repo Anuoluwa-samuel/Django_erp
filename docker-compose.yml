@@ -1,5 +1,5 @@
 name: tenants
-  
+
 services:
   web:
     build: .
@@ -17,10 +17,8 @@ services:
     container_name: postgres-container
     ports:
       - "5432:5432"
-    environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+    env_file:
+      - .env
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
