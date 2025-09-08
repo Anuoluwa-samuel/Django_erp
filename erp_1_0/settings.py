@@ -12,8 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 
 import environ 
-env = Env()
-env.read_env()
+env = environ.Env()
+environ.Env.read_env()
+
 
 ENVIRONMENT = env('ENVIRONMENT', default="development")
 ENVIRONMENT = "production"
