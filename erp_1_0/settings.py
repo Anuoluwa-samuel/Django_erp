@@ -18,7 +18,6 @@ env = environ.Env()
 env.read_env(BASE_DIR / ".env")
 
 ENVIRONMENT = env('ENVIRONMENT', default="development")
-ENVIRONMENT = "production"
 
 import os
 
