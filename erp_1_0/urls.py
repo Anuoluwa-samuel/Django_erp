@@ -25,3 +25,9 @@ urlpatterns = [
     path('purchases/', include('purchases.urls')),
     path('', lambda request: redirect('login'), name='home'),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += [
+        path("__reload__/", include("django_browser_reload.urls")),
+    ]
