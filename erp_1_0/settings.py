@@ -36,7 +36,7 @@ SECRET_KEY = env('SECRET_KEY', default="secret_key")
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
-    DEBUG = FALSE
+    DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
 
