@@ -147,7 +147,7 @@ WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 
 
-if ENVIRONMENT == 'development':
+if env(ENVIRONMENT) == 'development':
     DATABASES = {
         'default': {
             'ENGINE': 'django_tenants.postgresql_backend',
