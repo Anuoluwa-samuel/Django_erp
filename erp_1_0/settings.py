@@ -27,6 +27,7 @@ env.read_env(BASE_DIR / ".env")
 # Environment (development / production)
 ENVIRONMENT = env("ENVIRONMENT", default="development")
 
+
 # Security
 SECRET_KEY = env("SECRET_KEY", default="secret_key")
 
