@@ -222,4 +222,4 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_LOGIN_METHODS = {'email', 'username'}
-ACCOUNT_SIGNUP_FIELDS =
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password']
