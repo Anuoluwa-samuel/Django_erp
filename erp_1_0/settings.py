@@ -147,7 +147,7 @@ if ENVIRONMENT == 'development':
     DATABASES = {
         'default': {
             'ENGINE': 'django_tenants.postgresql_backend',
-            'NAME': "postgres",
+            'NAME': env('PGDATABASE'),
             'USER':"postgres",
             'PASSWORD': "postgres",
             'HOST': "localhost",
