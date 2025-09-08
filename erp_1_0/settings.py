@@ -145,8 +145,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
 if ENVIRONMENT == 'development':
     DATABASES = {
         'default': {
