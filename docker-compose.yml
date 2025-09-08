@@ -1,5 +1,5 @@
 name: tenants
-
+  
 services:
   web:
     build: .
@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - postgres-container
+      - db
 
   postgres:
     image: postgres:16
