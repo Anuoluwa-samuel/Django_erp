@@ -31,7 +31,7 @@ ENVIRONMENT = env("ENVIRONMENT", default="development")
 SECRET_KEY = env("SECRET_KEY", default="secret_key")
 
 # Debug
-DEBUG = ENVIRONMENT == "development"
+if ENVIRONMENT == 'development'
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "*"]
 CSRF_TRUSTED_ORIGINS = ["https://*"]
