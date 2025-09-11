@@ -14,4 +14,4 @@ COPY .env /code/.env
 
 
 # Default command
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "erp_1_0.wsgi:application", "--bind", "0.0.0.0:8000"]
