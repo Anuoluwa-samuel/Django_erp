@@ -15,7 +15,9 @@ Django settings for erp_1_0 project.
 
 from pathlib import Path
 
-import environ
+from environ import Env
+env = 
+
 import os
 
 # Base directory
