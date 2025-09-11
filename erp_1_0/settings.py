@@ -137,8 +137,8 @@ WSGI_APPLICATION = "erp_1_0.wsgi.application"
 if ENVIRONMENT == "development":
     DATABASES = {
         "default": {
-            "ENGINE": "django_tenants.postgresql_backend",
-            "NAME": env("POSTGRES_DB"),
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": postgres,
             "USER": env("POSTGRES_USER"),
             "PASSWORD": env("POSTGRES_PASSWORD"),
             "HOST": env("PGHOST"),
