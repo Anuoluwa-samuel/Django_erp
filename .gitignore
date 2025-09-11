@@ -1,5 +1,4 @@
 venv/
-migrations/
 __pycache__/
 .env
 erp_1_0/.env 
