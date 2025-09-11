@@ -147,17 +147,6 @@ if ENVIRONMENT == "development":
             "PORT": 5432
         }
     }
-else:  # production / Railway
-    DATABASES = {
-        "default": {
-            "ENGINE": "django_tenants.postgresql_backend",
-            "NAME": env("RAILWAY_DB"),
-            "USER": env("RAILWAY_USER"),
-            "PASSWORD": env("RAILWAY_PASSWORD"),
-            "HOST": env("RAILWAY_HOST"),
-            "PORT": env("RAILWAY_PORT"),
-        }
-    }
 
 
 DATABASE_ROUTERS = {
