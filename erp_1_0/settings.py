@@ -12,21 +12,16 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 Django settings for erp_1_0 project.
 """
-
+import os
 from pathlib import Path
 
 from environ import Env
 env = Env()
 env.read_env()
 
-import os
-
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load environment variables
-env = environ.Env()
-env.read_env(BASE_DIR / ".env")
 
 # Environment (development / production)
 ENVIRONMENT = env("ENVIRONMENT", default="development")
