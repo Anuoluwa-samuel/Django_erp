@@ -1,5 +1,6 @@
 venv/
 migrations/
 __pycache__/
-erp_1.0/.env
+.env
+erp_1_0/.env 
 docker-compose.yml
