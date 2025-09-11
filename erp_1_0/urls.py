@@ -11,7 +11,6 @@ urlpatterns = [
     path('', lambda request: redirect('login'), name='home'),
 ]
 
-# Run django-browser-reload only in development
 if getattr(settings, "ENVIRONMENT", "development") == "development":
     urlpatterns += [
         path("__reload__/", include("django_browser_reload.urls")),
