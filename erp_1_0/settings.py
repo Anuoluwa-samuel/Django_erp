@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 Django settings for erp_1_0 project.
 """
-import os
 from pathlib import Path
 
 from environ import Env
