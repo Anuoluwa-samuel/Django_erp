@@ -147,6 +147,17 @@ if ENVIRONMENT == "development":
             "PORT": 5432
         }
     }
+else:
+     DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "postgres",
+            "USER": "postgres",
+            "PASSWORD":"postgres",
+            "HOST": "localhost",
+            "PORT": 5432
+        }
+    }
 
 
 DATABASE_ROUTERS = {
