@@ -161,7 +161,7 @@ else:
 
 
 DATABASE_ROUTERS = {
-    "django_tenants.routers.TenantRouter"
+    "django_tenants.routers.TenantSyncRouter"
 }
 
 TENANT_MODEL = "tenant_manager.Tenant"
