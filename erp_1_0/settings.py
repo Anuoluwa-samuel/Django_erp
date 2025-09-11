@@ -28,7 +28,7 @@ ENVIRONMENT = env("ENVIRONMENT", default="development")
 
 # Security
 SECRET_KEY = env('SECRET_KEY', default="secret_key")
-
+ENVIRONMENT
 # Debug
 if ENVIRONMENT == 'development':
     DEBUG = True
