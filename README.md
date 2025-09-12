@@ -41,5 +41,5 @@ It is designed to unify organizational operations across multiple modules while 
 
 ### 1. Clone the repository
 ```bash
-git clone 
-cd synestra-erp
+git clone https://github.com/HeteroGenius01/erp_1_0/tree/Ayomide
+cd erp_1_0
