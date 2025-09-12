@@ -71,4 +71,32 @@ erp_1_0/
 │── .env.example        # Environment variables template
 
 
------------------------------------------------------
+-----------------------------------------------------🤝 Contributing
+Fork the repo
+
+Create your feature branch: git checkout -b feature/your-feature
+
+Commit changes: git commit -m 'Add your feature'
+
+Push to branch: git push origin feature/your-feature
+
+Open a Pull Request
+
+📜 License
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute it under the terms of the license.
+
+👨🏽‍💻 Author
+Ogunyemi Ayomide Samuel (Anuoluwa)
+Chairman – Sport and Social Committee, Faculty President, and Tech Enthusiast.
+
+
+---
+
+This `README.md` is **production-ready**:  
+- It explains **what Synestra is**  
+- Guides on **setup & usage**  
+- Includes **tech stack & structure**  
+- Has a **contribution guide & license**  
+
+👉 Do you want me to also add **badges** (e.g., build passing, Docker, Python version, license) at the to
