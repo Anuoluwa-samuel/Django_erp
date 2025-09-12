@@ -46,6 +46,7 @@ cd erp_1_0
 
 
 -------------------------------------------------------------------------------
+🧪 Running Locally (without Docker)
 
 python -m venv venv
 source venv/bin/activate   # Linux/Mac
@@ -68,3 +69,6 @@ erp_1_0/
 │── docker-compose.yml  # Docker setup
 │── requirements.txt    # Dependencies
 │── .env.example        # Environment variables template
+
+
+-----------------------------------------------------
