@@ -71,7 +71,9 @@ erp_1_0/
 │── .env.example        # Environment variables template
 
 
------------------------------------------------------🤝 Contributing
+-----------------------------------------------------
+🤝 Contributing
+
 Fork the repo
 
 Create your feature branch: git checkout -b feature/your-feature
@@ -99,4 +101,4 @@ This `README.md` is **production-ready**:
 - Includes **tech stack & structure**  
 - Has a **contribution guide & license**  
 
-👉 Do you want me to also add **badges** (e.g., build passing, Docker, Python version, license) at the to
+👉 Do you want me to also add **badges** (e.g., build passing, Docker, Python version, license) at the top so the README looks more professional on GitHub?
