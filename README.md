@@ -123,4 +123,4 @@ This `README.md` is **production-ready**:
 - Has a **contribution guide & license**  
 
 
-for further questions or observations, feel free to reach out to me 
+for further questions or observations, feel free to reach out to me via mail ayomidesamuel365@gmail.com
