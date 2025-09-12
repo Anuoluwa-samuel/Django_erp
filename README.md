@@ -55,3 +55,16 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 
+-----------------------------------------------------------
+📂 Project Structure
+
+
+erp_1_0/
+│── erp_1_0/            # Core Django project
+│── purchases/          # Purchases module
+│── inventory/          # Inventory module
+│── templates/          # HTML templates
+│── fixtures/           # Sample/test data
+│── docker-compose.yml  # Docker setup
+│── requirements.txt    # Dependencies
+│── .env.example        # Environment variables template
