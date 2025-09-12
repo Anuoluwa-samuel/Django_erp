@@ -101,5 +101,3 @@ This `README.md` is **production-ready**:
 - Guides on **setup & usage**  
 - Includes **tech stack & structure**  
 - Has a **contribution guide & license**  
-
-👉 Do you want me to also add **badges** (e.g., build passing, Docker, Python version, license) at the top so the README looks more professional on GitHub?
