@@ -90,6 +90,26 @@ Open a Pull Request
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute it under the terms of the license.
 
+--------------------------------------------------------------------------
+
+✅ Summary of Techniques Used
+
+Backend Framework: Django (ORM, Forms, CBVs, RBAC)
+
+Database: MySQL (initial), migrated to PostgreSQL
+
+Containerization: Docker + Docker Compose
+
+Version Control: GitHub with .gitignore rules
+
+Frontend: Django templates + Bootstrap + Modal forms
+
+Data Management: JSON fixtures for test/sample data
+
+Access Control: Django permissions & role restrictions
+
+Multi-tenancy: Schema-based tenant support
+
 ----------------------------------------------------------------------
 👨🏽‍💻 Author
 Ogunyemi Ayomide Samuel (Anuoluwa)
