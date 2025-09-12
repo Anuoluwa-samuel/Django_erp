@@ -84,7 +84,9 @@ Push to branch: git push origin feature/your-feature
 
 Open a Pull Request
 
+------------------------------------------------------------------
 📜 License
+
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute it under the terms of the license.
 
