@@ -43,3 +43,15 @@ It is designed to unify organizational operations across multiple modules while 
 ```bash
 git clone https://github.com/HeteroGenius01/erp_1_0/tree/Ayomide
 cd erp_1_0
+
+
+-------------------------------------------------------------------------------
+
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+
