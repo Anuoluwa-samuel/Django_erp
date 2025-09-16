@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ERP 
 
 ERP is a modular Enterprise Resource Planning (ERP) system built with Django and PostgreSQL.  
@@ -124,3 +125,6 @@ This `README.md` is **production-ready**:
 
 
 for further questions or observations, feel free to reach out to me via mail ayomidesamuel365@gmail.com
+=======
+# Django_erp
+>>>>>>> 2da27a385bf90b95dd754dfbb6198d6f95a2dce0
