@@ -139,14 +139,13 @@ WSGI_APPLICATION = "erp_1_0.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django_tenants.postgresql_backend',
-        'NAME': env('PGDATABASE', default='postgres'),  # use your existing database
+        'NAME': env('PGDATABASE', default='postgres'), 
         'USER': env('PGUSER', default='postgres'),
         'PASSWORD': env('PGPASSWORD', default='postgres'),
         'HOST': env('PGHOST', default='localhost'),
         'PORT': env('PGPORT', default='5432'),
     }
 }
-
 
 DATABASE_ROUTERS = {
     "django_tenants.routers.TenantSyncRouter"
