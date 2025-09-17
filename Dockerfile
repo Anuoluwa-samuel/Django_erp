@@ -10,7 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . /code/
 
-COPY .env /code/.env
+COPY .env .env
 
 
 # Default command
