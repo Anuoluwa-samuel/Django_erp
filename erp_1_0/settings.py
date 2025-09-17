@@ -136,28 +136,16 @@ TEMPLATES = [
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 # Database (works for both dev and prod)
-if ENVIRONMENT == "development":
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": "postgres",
-            "USER": "postgres",
-            "PASSWORD":"postgres",
-            "HOST": "localhost",
-            "PORT": 5432
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django_tenants.postgresql_backend',
+        'NAME': env('PGDATABASE', default='postgres'),  # use your existing database
+        'USER': env('PGUSER', default='postgres'),
+        'PASSWORD': env('PGPASSWORD', default='postgres'),
+        'HOST': env('PGHOST', default='localhost'),
+        'PORT': env('PGPORT', default='5432'),
     }
-else:
-     DATABASES = {
-        'default': {
-            'ENGINE': 'django_tenants.postgresql_backend',
-            'NAME': env('PGDATABASE'),
-            'USER': env('PGUSER'),
-            'PASSWORD':env('PGPASSWORD'),
-            'HOST': env('PGHOST'),
-            'PORT': env('PGPORT'),
-        }
-    }
+}
 
 
 DATABASE_ROUTERS = {
