@@ -144,9 +144,12 @@ if ENVIRONMENT == ' development'
             'NAME': 'postgres', 
             'USER': 'postgres',
             'PASSWORD': 'postgres',
-            'HOST': ''
+            'HOST': 'localhost',
+            'PORT': '5432'
         }
     }
+
+
 DATABASES = {
     'default': {
         'ENGINE': ,
