@@ -30,7 +30,7 @@ ENVIRONMENT = "production"
 SECRET_KEY = env('SECRET_KEY', default="secret_key")
 
 # Debug
-DEBUG = TRUE 
+DEBUG = True 
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"]
 
