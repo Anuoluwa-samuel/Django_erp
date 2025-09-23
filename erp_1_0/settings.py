@@ -148,8 +148,7 @@ if ENVIRONMENT == ' development'
             'PORT': '5432'
         }
     }
-
-
+else:
 DATABASES = {
     'default': {
         'ENGINE': ,
