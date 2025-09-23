@@ -149,7 +149,7 @@ DATABASES = {
     }
 }
 
-DATABASE_ROUTERS = {
+DATABASE_ROUTERS = 
     "django_tenants.routers.TenantSyncRouter"
 }
 
