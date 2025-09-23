@@ -137,6 +137,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
 # Database (works for both dev and prod)
+if ENVIRONMENT
 DATABASES = {
     'default': {
         'ENGINE': 'django_tenants.postgresql_backend',
