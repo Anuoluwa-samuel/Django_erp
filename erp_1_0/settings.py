@@ -26,6 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Environment (development / production)
 ENVIRONMENT = env("ENVIRONMENT", default="development")
+ENVIRONMENT = "production"
 
 # Security
 SECRET_KEY = env('SECRET_KEY', default="secret_key")
@@ -34,9 +35,9 @@ SECRET_KEY = env('SECRET_KEY', default="secret_key")
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
-    DEBUG = True
+    DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app", "*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"]
 
 CSRF_TRUSTED_ORIGINS = ["https://djangoerp-production.up.railway.app"]
 
@@ -52,7 +53,6 @@ SHARED_APPS = [
     "django.contrib.staticfiles",
     "django_cleanup.apps.CleanupConfig",
     "django.contrib.sites",
-    "django_browser_reload",
     "allauth",
     "allauth.account",
     "dashboard",
@@ -149,10 +149,9 @@ DATABASES = {
     }
 }
 
-DATABASE_ROUTERS = [
-         "django_tenants.routers.TenantSyncRouter"
-]
-   
+DATABASE_ROUTERS = {
+    "django_tenants.routers.TenantSyncRouter"
+}
 
 TENANT_MODEL = "tenant_manager.Tenant"
 TENANT_DOMAIN_MODEL = "tenant_manager.Domain"
