@@ -11,7 +11,7 @@ urlpatterns = [
     path('', lambda request: redirect('login'), name='home'),
 ]
 
-if getattr(settings, "ENVIRONMENT", "development") == "development":
-    urlpatterns += [
-        path("__reload__/", include("django_browser_reload.urls")),
-    ]
+# if getattr(settings, "ENVIRONMENT", "development") == "development":
+#     urlpatterns += [
+#         path("__reload__/", include("django_browser_reload.urls")),
+#     ]
