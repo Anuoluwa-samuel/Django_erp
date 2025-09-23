@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 Django settings for erp_1_0 project.
 """
-import os 
 
 from pathlib import Path
 
@@ -174,7 +173,7 @@ USE_TZ = True
 # Static & Media
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static' ]
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
