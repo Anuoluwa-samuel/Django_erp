@@ -149,9 +149,10 @@ DATABASES = {
     }
 }
 
-DATABASE_ROUTERS = 
-    "django_tenants.routers.TenantSyncRouter"
-}
+DATABASE_ROUTERS = [
+         "django_tenants.routers.TenantSyncRouter"
+]
+   
 
 TENANT_MODEL = "tenant_manager.Tenant"
 TENANT_DOMAIN_MODEL = "tenant_manager.Domain"
