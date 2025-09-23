@@ -30,7 +30,10 @@ ENVIRONMENT = "production"
 SECRET_KEY = env('SECRET_KEY', default="secret_key")
 
 # Debug
-DEBUG = True 
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"]
 
@@ -170,7 +173,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
