@@ -135,7 +135,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "erp_1_0.wsgi.application"
+WSGI_APPLICATION = "erp_1_0.wsgi:application"
 
 # Database (works for both dev and prod)
 DATABASES = {
