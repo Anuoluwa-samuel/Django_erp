@@ -20,6 +20,10 @@ from environ import Env
 env = Env()
 env.read_env()
 
+# Environment (development / production)
+ENVIRONMENT = env("ENVIRONMENT", default="development")
+ENVIRONMENT = "production"
+
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
