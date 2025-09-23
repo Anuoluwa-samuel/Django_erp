@@ -34,9 +34,9 @@ SECRET_KEY = env('SECRET_KEY', default="secret_key")
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app", "*"]
 
 CSRF_TRUSTED_ORIGINS = ["https://djangoerp-production.up.railway.app"]
 
