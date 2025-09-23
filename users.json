@@ -1,7 +1,7 @@
 [
   {
     "model": "auth.user",
-    "pk": 2,
+    "pk": 4,
     "fields": {
       "username": "john_doe",
       "email": "john@example.com",
@@ -15,7 +15,7 @@
   },
   {
     "model": "auth.user",
-    "pk": 3,
+    "pk": 5,
     "fields": {
       "username": "jane_smith",
       "email": "jane@example.com",
@@ -29,7 +29,7 @@
   },
   {
     "model": "auth.user",
-    "pk": 4,
+    "pk": 6,
     "fields": {
       "username": "aisha_bello",
       "email": "aisha@example.com",
@@ -43,7 +43,7 @@
   },
   {
     "model": "auth.user",
-    "pk": 5,
+    "pk": 7,
     "fields": {
       "username": "michael_brown",
       "email": "michael@example.com",
