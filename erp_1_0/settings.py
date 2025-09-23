@@ -142,7 +142,9 @@ if ENVIRONMENT == ' development'
         'default': {
             'ENGINE': 'django_tenants.postgresql_backend',
             'NAME': 'postgres', 
-            
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': ''
         }
     }
 DATABASES = {
