@@ -122,7 +122,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
-# Database (works for both dev and prod)
+# Database (works for both development and production)
 if ENVIRONMENT == ' development':
     DATABASES = {
         'default': {
@@ -154,7 +154,6 @@ TENANT_MODEL = "tenant_manager.Tenant"
 TENANT_DOMAIN_MODEL = "tenant_manager.Domain"
 SHOW_PUBLIC_IF_NO_TENANT_FOUND = True
 
-# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -162,7 +161,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# Internationalization
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
