@@ -11,77 +11,48 @@
   <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
     
-    <form id="registerForm" class="space-y-4" novalidate>
-      <!-- First Name -->
-      <div>
-        <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
-        <input type="text" id="firstName" name="firstName" required 
-               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        <p class="text-red-500 text-sm mt-1 hidden">First name is required.</p>
-      </div>
+    <form method="POST" action="{% url 'register' %}" class="space-y-4">
+  {% csrf_token %}
 
-      <!-- Last Name -->
-      <div>
-        <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
-        <input type="text" id="lastName" name="lastName" required 
-               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        <p class="text-red-500 text-sm mt-1 hidden">Last name is required.</p>
-      </div>
+  <!-- Render each field manually (for Tailwind styling) -->
+  <div>
+    <label class="block text-sm font-medium">First Name</label>
+    {{ form.first_name }}
+  </div>
 
-      <!-- Email -->
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" id="email" name="email" required 
-               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        <p class="text-red-500 text-sm mt-1 hidden">Enter a valid email address.</p>
-      </div>
+  <div>
+    <label class="block text-sm font-medium">Last Name</label>
+    {{ form.last_name }}
+  </div>
 
-      <!-- Username -->
-      <div>
-        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-        <input type="text" id="username" name="username" required minlength="3"
-               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        <p class="text-red-500 text-sm mt-1 hidden">Username must be at least 3 characters.</p>
-      </div>
+  <div>
+    <label class="block text-sm font-medium">Email</label>
+    {{ form.email }}
+  </div>
 
-      <!-- Phone -->
-      <div>
-        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required pattern="^[0-9]{10,15}$"
-               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        <p class="text-red-500 text-sm mt-1 hidden">Enter a valid phone number (10–15 digits).</p>
-      </div>
+  <div>
+    <label class="block text-sm font-medium">Username</label>
+    {{ form.username }}
+  </div>
 
-      <!-- Password -->
-      <div>
-        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" id="password" name="password" required minlength="6"
-               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        <p class="text-red-500 text-sm mt-1 hidden">Password must be at least 6 characters.</p>
-        <div class="flex items-center mt-2">
-          <input type="checkbox" id="showPassword" class="mr-2">
-          <label for="showPassword" class="text-sm text-gray-600">Show Password</label>
-        </div>
-      </div>
+  <div>
+    <label class="block text-sm font-medium">Phone</label>
+    {{ form.phone }}
+  </div>
 
-      <!-- Confirm Password -->
-      <div>
-        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required
-               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-        <p id="passwordError" class="text-red-500 text-sm mt-1 hidden">Passwords do not match.</p>
-        <div class="flex items-center mt-2">
-          <input type="checkbox" id="showConfirmPassword" class="mr-2">
-          <label for="showConfirmPassword" class="text-sm text-gray-600">Show Confirm Password</label>
-        </div>
-      </div>
+  <div>
+    <label class="block text-sm font-medium">Password</label>
+    {{ form.password1 }}
+  </div>
 
-      <!-- Submit Button -->
-      <button type="submit" 
-              class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
-        Register
-      </button>
-    </form>
+  <div>
+    <label class="block text-sm font-medium">Confirm Password</label>
+    {{ form.password2 }}
+  </div>
+
+  <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md">Register</button>
+</form>
+
   </div>
 
 </body>
