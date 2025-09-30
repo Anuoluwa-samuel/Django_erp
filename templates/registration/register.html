@@ -1,29 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 h-screen flex items-center justify-center">
-    <form method="post" class="bg-white p-8 rounded shadow-md w-full max-w-sm">
-        {% csrf_token %}
-        <h2 class="text-2xl font-bold mb-4">Create Account</h2>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-        {% for field in form %}
-        <div class="mb-4" >
-            <label class="block mb-2">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-                <p class="text-red-500 text-sm" >{{ field.errors.0 }}</p>
-            {% endif %}
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
+    
+    <form id="registerForm" class="space-y-4" novalidate>
+      <!-- First Name -->
+      <div>
+        <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+        <input type="text" id="firstName" name="firstName" required 
+               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <p class="text-red-500 text-sm mt-1 hidden">First name is required.</p>
+      </div>
+
+      <!-- Last Name -->
+      <div>
+        <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required 
+               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <p class="text-red-500 text-sm mt-1 hidden">Last name is required.</p>
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="email" required 
+               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <p class="text-red-500 text-sm mt-1 hidden">Enter a valid email address.</p>
+      </div>
+
+      <!-- Username -->
+      <div>
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" id="username" name="username" required minlength="3"
+               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <p class="text-red-500 text-sm mt-1 hidden">Username must be at least 3 characters.</p>
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required pattern="^[0-9]{10,15}$"
+               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+        <p class="text-red-500 text-sm mt-1 hidden">Enter a valid phone number (10–15 digits).</p>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <div class="relative">
+          <input type="password" id="password" name="password" required minlength="6"
+                 class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none pr-10">
+          <button type="button" onclick="togglePassword('password')" 
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
+            👁️
+          </button>
         </div>
-        {% endfor %}
+        <p class="text-red-500 text-sm mt-1 hidden">Password must be at least 6 characters.</p>
+      </div>
 
-        <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">Register</button>
-        <p class="mt-4 text-sm text-center">
-            I already have an account  
-            <a href="{% url 'login' %}" class="text-blue-600 hover:text-blue-800">Login</a>
-        </p>
+      <!-- Confirm Password -->
+      <div>
+        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+        <div class="relative">
+          <input type="password" id="confirmPassword" name="confirmPassword" required
+                 class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none pr-10">
+          <button type="button" onclick="togglePassword('confirmPassword')" 
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
+            👁️
+          </button>
+        </div>
+        <p id="passwordError" class="text-red-500 text-sm mt-1 hidden">Passwords do not match.</p>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" 
+              class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+        Register
+      </button>
     </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const inputs = form.querySelectorAll("input");
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const passwordError = document.getElementById("passwordError");
+
+    // Toggle show/hide password
+    function togglePassword(id) {
+      const field = document.getElementById(id);
+      field.type = field.type === "password" ? "text" : "password";
+    }
+
+    // Real-time validation
+    inputs.forEach(input => {
+      input.addEventListener("input", () => {
+        if (!input.checkValidity()) {
+          input.classList.add("border-red-500");
+          input.nextElementSibling?.classList?.remove("hidden");
+        } else {
+          input.classList.remove("border-red-500");
+          input.nextElementSibling?.classList?.add("hidden");
+        }
+
+        // Password match check
+        if (input.id === "confirmPassword" || input.id === "password") {
+          if (password.value !== confirmPassword.value) {
+            confirmPassword.classList.add("border-red-500");
+            passwordError.classList.remove("hidden");
+          } else {
+            confirmPassword.classList.remove("border-red-500");
+            passwordError.classList.add("hidden");
+          }
+        }
+      });
+    });
+
+    // Prevent form submission if invalid
+    form.addEventListener("submit", (e) => {
+      if (!form.checkValidity() || password.value !== confirmPassword.value) {
+        e.preventDefault();
+        inputs.forEach(input => input.dispatchEvent(new Event("input")));
+      }
+    });
+  </script>
+
 </body>
 </html>
