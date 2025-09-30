@@ -46,4 +46,4 @@ def register(request):
             return redirect("login")  # or wherever you want to redirect
     else:
         form = RegistrationForm()
-    return render(request, "register.html", {"form": form})
+    return render(request, "registration/register.html", {"form": form})
