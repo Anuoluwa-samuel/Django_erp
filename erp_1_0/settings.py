@@ -154,8 +154,6 @@ TENANT_MODEL = "tenant_manager.Tenant"
 TENANT_DOMAIN_MODEL = "tenant_manager.Domain"
 SHOW_PUBLIC_IF_NO_TENANT_FOUND = True
 
-AUTH_USER_MODEL = "dashboard.CustomUser"
-
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
