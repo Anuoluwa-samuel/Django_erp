@@ -16,7 +16,7 @@ def login_view(request):
         if user:
             login(request, user)
             return redirect('dashboard')
-        else:
+        else: 
             return render(request, 'login.html', {'error': 'Invalid credentials'})
 
     return render(request, 'login.html')
