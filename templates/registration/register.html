@@ -50,7 +50,14 @@
     {{ form.password2 }}
   </div>
 
-    
+    <p class="text-center small">
+  By signing up, you agree to our 
+  <a href="{% url 'terms' %}">Terms</a>, 
+  <a href="{% url 'privacy' %}">Privacy Policy</a> 
+  and 
+  <a href="{% url 'cookies' %}">Cookies Policy</a>.
+</p>
+
 
   <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md">Register</button>
       <p class="mt-4 tex-sm text-center">
