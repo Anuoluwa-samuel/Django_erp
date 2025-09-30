@@ -40,7 +40,7 @@ SHARED_APPS = [
     "django.contrib.sites",
     "allauth",
     "allauth.account",
-    "dashboard",
+    "dashboard.apps.DashboardConfig",
     "purchases",
     "CRM",
     "django_htmx",
