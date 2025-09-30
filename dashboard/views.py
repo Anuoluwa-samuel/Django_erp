@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import UserCreationForm
+from .forms import RegistrationForm
 from django.contrib import messages
     
 
@@ -38,13 +38,12 @@ def dashboard_view(request):
     ]
     return render(request, "dashboard.html", {"modules": modules})
 
-def register_view(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+def register(request):
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "User created successfully.")
-            return redirect('login')
+            return redirect("login")  # or wherever you want to redirect
     else:
-        form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+        form = RegistrationForm()
+    return render(request, "register.html", {"form": form})
