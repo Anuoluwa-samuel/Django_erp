@@ -55,29 +55,25 @@
       <!-- Password -->
       <div>
         <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-        <div class="relative">
-          <input type="password" id="password" name="password" required minlength="6"
-                 class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none pr-10">
-          <button type="button" onclick="togglePassword('password')" 
-                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
-            👁️
-          </button>
-        </div>
+        <input type="password" id="password" name="password" required minlength="6"
+               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
         <p class="text-red-500 text-sm mt-1 hidden">Password must be at least 6 characters.</p>
+        <div class="flex items-center mt-2">
+          <input type="checkbox" id="showPassword" class="mr-2">
+          <label for="showPassword" class="text-sm text-gray-600">Show Password</label>
+        </div>
       </div>
 
       <!-- Confirm Password -->
       <div>
         <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
-        <div class="relative">
-          <input type="password" id="confirmPassword" name="confirmPassword" required
-                 class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none pr-10">
-          <button type="button" onclick="togglePassword('confirmPassword')" 
-                  class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
-            👁️
-          </button>
-        </div>
+        <input type="password" id="confirmPassword" name="confirmPassword" required
+               class="mt-1 w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
         <p id="passwordError" class="text-red-500 text-sm mt-1 hidden">Passwords do not match.</p>
+        <div class="flex items-center mt-2">
+          <input type="checkbox" id="showConfirmPassword" class="mr-2">
+          <label for="showConfirmPassword" class="text-sm text-gray-600">Show Confirm Password</label>
+        </div>
       </div>
 
       <!-- Submit Button -->
@@ -95,11 +91,14 @@
     const confirmPassword = document.getElementById("confirmPassword");
     const passwordError = document.getElementById("passwordError");
 
-    // Toggle show/hide password
-    function togglePassword(id) {
-      const field = document.getElementById(id);
-      field.type = field.type === "password" ? "text" : "password";
-    }
+    // Show/hide password checkboxes
+    document.getElementById("showPassword").addEventListener("change", function() {
+      password.type = this.checked ? "text" : "password";
+    });
+
+    document.getElementById("showConfirmPassword").addEventListener("change", function() {
+      confirmPassword.type = this.checked ? "text" : "password";
+    });
 
     // Real-time validation
     inputs.forEach(input => {
