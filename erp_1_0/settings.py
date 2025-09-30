@@ -64,7 +64,7 @@ TENANT_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django_browser_reload",
-    "dashboard",
+    "dashboard.apps.DashboardConfig",
     "purchases",
     "CRM",
     "Accounting",
