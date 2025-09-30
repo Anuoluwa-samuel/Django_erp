@@ -84,54 +84,5 @@
     </form>
   </div>
 
-  <script>
-    const form = document.getElementById("registerForm");
-    const inputs = form.querySelectorAll("input");
-    const password = document.getElementById("password");
-    const confirmPassword = document.getElementById("confirmPassword");
-    const passwordError = document.getElementById("passwordError");
-
-    // Show/hide password checkboxes
-    document.getElementById("showPassword").addEventListener("change", function() {
-      password.type = this.checked ? "text" : "password";
-    });
-
-    document.getElementById("showConfirmPassword").addEventListener("change", function() {
-      confirmPassword.type = this.checked ? "text" : "password";
-    });
-
-    // Real-time validation
-    inputs.forEach(input => {
-      input.addEventListener("input", () => {
-        if (!input.checkValidity()) {
-          input.classList.add("border-red-500");
-          input.nextElementSibling?.classList?.remove("hidden");
-        } else {
-          input.classList.remove("border-red-500");
-          input.nextElementSibling?.classList?.add("hidden");
-        }
-
-        // Password match check
-        if (input.id === "confirmPassword" || input.id === "password") {
-          if (password.value !== confirmPassword.value) {
-            confirmPassword.classList.add("border-red-500");
-            passwordError.classList.remove("hidden");
-          } else {
-            confirmPassword.classList.remove("border-red-500");
-            passwordError.classList.add("hidden");
-          }
-        }
-      });
-    });
-
-    // Prevent form submission if invalid
-    form.addEventListener("submit", (e) => {
-      if (!form.checkValidity() || password.value !== confirmPassword.value) {
-        e.preventDefault();
-        inputs.forEach(input => input.dispatchEvent(new Event("input")));
-      }
-    });
-  </script>
-
 </body>
 </html>
