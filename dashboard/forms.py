@@ -18,7 +18,7 @@ class RegistrationForm(UserCreationForm):
             "first_name": forms.TextInput(attrs={"class": "w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"}),
             "last_name": forms.TextInput(attrs={"class": "w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"}),
             "username": forms.TextInput(attrs={"class": "w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"}),
-            "password1": forms.TextInput(attrs={"class": "w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"}),
+            "password1": forms.PasswordInput(attrs={"class": "w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"}),
             "password2": forms.PasswordInput(attrs={"class": "w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-indigo-500"}),
         }
 
