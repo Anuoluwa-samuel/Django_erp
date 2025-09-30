@@ -52,6 +52,12 @@
 
   <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-md">Register</button>
 </form>
+<a href="{% url 'login' %}" class="btn btn-primary w-100 mb-3">Login</a>
+
+      <!-- Forgot Password Link -->
+      <p>
+        <a href="{% url 'password_reset' %}">Forgot your password?</a>
+      </p>
 
   </div>
 
