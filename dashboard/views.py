@@ -43,8 +43,8 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "user created sucessfully")
-            return redirect("login")  # or wherever you want to redirect
+            messages.success(request, "user created successfully")
+            return redirect("login")  
     else:
         form = RegistrationForm()
     return render(request, "registration/register.html", {"form": form})
