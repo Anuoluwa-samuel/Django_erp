@@ -196,6 +196,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'ayomidesamuel365@gmail.com'
 EMAIL_HOST_PASSWORD = 'vzgd akgh mwol txrw'
 
+
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
 ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
 
