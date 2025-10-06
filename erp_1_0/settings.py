@@ -38,7 +38,7 @@ SHARED_APPS = [
     "django.contrib.staticfiles",
     "django_cleanup.apps.CleanupConfig",
     "django.contrib.sites",
-    'notifications"
+    "notifications",
     "allauth",
     "allauth.account",
     "dashboard.apps.DashboardConfig",
