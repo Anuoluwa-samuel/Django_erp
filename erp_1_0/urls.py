@@ -12,7 +12,7 @@ urlpatterns = [
     path('purchases/', include('purchases.urls')),
     path('', lambda request: redirect('login'), name='home'),
 
-    path('login/', login_view, name='login'),
+    path('login/', user_view.login , name='login'),
     path('logout/', logout_view, name='logout'),
     path('register/', register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
