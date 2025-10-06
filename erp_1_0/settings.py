@@ -7,7 +7,7 @@ env.read_env()
 
 # Environment (development / production)
 ENVIRONMENT = env("ENVIRONMENT", default="development")
-ENVIRONMENT = "production"
+# ENVIRONMENT = "production"
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -17,7 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY', default="secret_key")
 
 # Debug
-DEBUG = True
+if ENVIRONMENT == 'development':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"]
 
