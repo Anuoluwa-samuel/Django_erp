@@ -22,7 +22,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('logout')
+    return render(request, 'logout.html')
 
 @login_required
 def dashboard_view(request):
