@@ -8,4 +8,4 @@ class DashboardConfig(AppConfig):
         import dashboard.signals  # 👈 this loads your signals
 
 def ready(self):
-    import yourapp.signals
+    import dashboard.signals
