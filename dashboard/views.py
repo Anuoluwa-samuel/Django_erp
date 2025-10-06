@@ -6,7 +6,7 @@ from django.contrib import messages
     
 
 
-def login_view(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -20,12 +20,12 @@ def login_view(request):
 
     return render(request, 'login.html')
 
-def logout_view(request):
+def logout(request):
     logout(request)
     return render(request, 'logout.html')
 
 @login_required
-def dashboard_view(request):
+def dashboard(request):
     modules = [
         {"name": "Inventory", "url": "/inventory/", "desc": "Manage product items"},
         {"name": "Purchases", "url": "/purchases/", "desc": "Manage purchase orders"},
