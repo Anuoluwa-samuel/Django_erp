@@ -12,7 +12,6 @@ urlpatterns = [
     path('purchases/', include('purchases.urls')),
     path('', lambda request: redirect('login'), name='home'),
 
-    path('', dashboard_view, name='dashboard'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('register/', register, name='register'),
