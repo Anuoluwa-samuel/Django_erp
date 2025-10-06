@@ -12,9 +12,7 @@ urlpatterns = [
     path('purchases/', include('purchases.urls')),
     path('', lambda request: redirect('login'), name='home'),
 
-    path('login/', user_view.login , name='login'),
-    path('logout/', logout_view, name='logout'),
-    path('register/', register, name='register'),
+    path('register/', user_view.tr, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('login/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
