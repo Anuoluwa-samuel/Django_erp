@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from dashboard import views as user_view
+from django.contrib.auth import views as auth_views
 from django.shortcuts import redirect
 from django.conf import settings
 
