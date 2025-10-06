@@ -192,7 +192,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'slowlybeginning@gmail.com'
-EMAIL_HOST_PASSWORD = 'gyzr lxmd ynmj ciow"
+EMAIL_HOST_PASSWORD = 'gyzr lxmd ynmj ciow'
 
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
 ACCOUNT_SIGNUP_FIELDS = ["email*", "username*", "password1*", "password2*"]
