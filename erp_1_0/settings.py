@@ -194,7 +194,7 @@ EMAIL_HOST = 'smtp-relay.brevo.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = '98bf6c001@smtp-brevo.com'
-EMAIL_HOST_PASSWORD = 'dbqs ogxj uuiu zktn'
+EMAIL_HOST_PASSWORD = 'kLC0tZPQTnI1sh5M'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
