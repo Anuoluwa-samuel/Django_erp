@@ -9,14 +9,14 @@ env.read_env()
 ENVIRONMENT = env("ENVIRONMENT", default="development")
 ENVIRONMENT = "production"
 
-# Base directory
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Security
+
 SECRET_KEY = env('SECRET_KEY', default="secret_key")
 
-# Debug
+
 if ENVIRONMENT == 'development':
     DEBUG = True
 else:
@@ -26,7 +26,7 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", "djangoerp-production.up.railway.app"
 
 CSRF_TRUSTED_ORIGINS = ["https://djangoerp-production.up.railway.app"]
 
-# Application definition
+
 SHARED_APPS = [
     "django_tenants",
     "tenant_manager",
@@ -124,7 +124,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "erp_1_0.wsgi.application"
 
-# Database (works for both development and production)
+
 if ENVIRONMENT == ' development':
     DATABASES = {
         'default': {
