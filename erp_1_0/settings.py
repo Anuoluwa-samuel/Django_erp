@@ -195,6 +195,8 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'Ayomidesamuel365@gmail.com'
 EMAIL_HOST_PASSWORD = 'dbqs ogxj uuiu zktn'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
