@@ -38,7 +38,6 @@ SHARED_APPS = [
     "django.contrib.staticfiles",
     "django_cleanup.apps.CleanupConfig",
     "django.contrib.sites",
-    "notifications",
     "allauth",
     "allauth.account",
     "dashboard.apps.DashboardConfig",
@@ -55,6 +54,7 @@ SHARED_APPS = [
     "inventory",
     "crispy_forms",
     "crispy_bootstrap5",
+    "notifications",
 ]
 
 TENANT_APPS = [
@@ -66,7 +66,6 @@ TENANT_APPS = [
     "django.contrib.staticfiles",
     "django_browser_reload",
     "dashboard.apps.DashboardConfig",
-    "notifications",
     "purchases",
     "CRM",
     "Accounting",
@@ -78,6 +77,7 @@ TENANT_APPS = [
     "inventory",
     "crispy_forms",
     "crispy_bootstrap5",
+    "notifications",
 ]
 
 INSTALLED_APPS = SHARED_APPS + [
