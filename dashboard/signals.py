@@ -46,7 +46,7 @@ def send_registration_notifications(sender, instance, created, **kwargs):
         message_user = render_to_string("user_registration_success.html", {
             "user": instance,
         })
-        if instance.email:
+        if instance.email:  
             send_mail(
                 subject_user,
                 strip_tags(message_user),
