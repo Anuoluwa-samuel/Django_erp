@@ -43,7 +43,7 @@ def send_registration_notifications(sender, instance, created, **kwargs):
 
         # --- 2️⃣ Notify User ---
         subject_user = "Account Created Successfully"
-        message_user = render_to_string("emails/user_registration_success.html", {
+        message_user = render_to_string("user_registration_success.html", {
             "user": instance,
         })
         if instance.email:
