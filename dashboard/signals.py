@@ -29,7 +29,7 @@ def send_registration_notifications(sender, instance, created, **kwargs):
     try:
         # --- 1️⃣ Notify Admin ---
         subject_admin = "New User Registration Alert"
-        message_admin = render_to_string("emails/admin_new_user.html", {
+        message_admin = render_to_string("admin_new_user.html", {
             "user": instance,
         })
         send_mail(
