@@ -179,16 +179,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Default PK
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Crispy forms
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-# Auth redirects
+
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login/"
 
-# Email backend (console for now)
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
