@@ -192,7 +192,7 @@ LOGOUT_REDIRECT_URL = "/login/"
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = 'f40c6b55c7aaa7'
-EMAIL_HOST_PASSWORD = 'be4a07414240ec'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = '2525'
 DEFAULT_FROM_EMAIL = 'ayomidesamuel365@gmail.com'
 
