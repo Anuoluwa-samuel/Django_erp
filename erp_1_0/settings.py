@@ -196,8 +196,8 @@ EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'Ayomidesamuel365@gmail.com'
 EMAIL_HOST_PASSWORD = 'BrBj yggA HuHS'
-DEFAULT_FROM_EMAIL = 'ayomidesamuel365@gmail.com'
-ANYMAIL = {'SENDGRID_API_KEY':env('SEND')}
+DEFAULT_FROM_EMAIL = env('')
+ANYMAIL = {'SENDGRID_API_KEY':env('SENDGRID_API_KEY')}
 
 
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
