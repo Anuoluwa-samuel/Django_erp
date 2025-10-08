@@ -195,7 +195,7 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = env.str("SENDGRID_API_KEY")
-DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL", "no-reply@yourdomain.com")
+DEFAULT_FROM_EMAIL='ayomidesamuel365@gmail.com'
 # ANYMAIL = {'SENDGRID_API_KEY':env('SENDGRID_API_KEY')}
 # SERVER_EMAIL = env('DEFAULT_FROM_EMAIL') #For server error notifications
 
