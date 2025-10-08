@@ -79,6 +79,7 @@ TENANT_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "notifications",
+    "anymail"
 ]
 
 INSTALLED_APPS = SHARED_APPS + [
@@ -190,7 +191,6 @@ LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login/"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
