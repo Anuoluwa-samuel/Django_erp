@@ -194,7 +194,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'Ayomidesamuel365@gmail.com'
-EMAIL_HOST_PASSWORD = 'dbqs ogxj uuiu zktn'
+EMAIL_HOST_PASSWORD = 'BrBj yggA HuHS'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
