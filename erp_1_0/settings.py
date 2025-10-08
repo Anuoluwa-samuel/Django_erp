@@ -188,15 +188,13 @@ LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login/"
 
-# EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # Looking to send emails in production? Check out our Email API/SMTP product!
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 EMAIL_HOST_USER = 'f40c6b55c7aaa7'
 EMAIL_HOST_PASSWORD = 'be4a07414240ec'
 EMAIL_PORT = '2525'
-# ANYMAIL = {'SENDGRID_API_KEY':env('SENDGRID_API_KEY')}
-# SERVER_EMAIL = env('DEFAULT_FROM_EMAIL') #For server error notifications
 
 
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
