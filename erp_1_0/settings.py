@@ -198,7 +198,7 @@ EMAIL_HOST_USER = 'Ayomidesamuel365@gmail.com'
 EMAIL_HOST_PASSWORD = 'BrBj yggA HuHS'
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 ANYMAIL = {'SENDGRID_API_KEY':env('SENDGRID_API_KEY')}
-SERVER_EMAIL = env('')
+SERVER_EMAIL = env('DEFAULT_FROM_EMAIL') #For server error notifications
 
 
 ACCOUNT_LOGIN_METHODS = {"email", "username"}
