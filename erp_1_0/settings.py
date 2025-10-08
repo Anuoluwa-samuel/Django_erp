@@ -55,6 +55,7 @@ SHARED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "notifications",
+    "anymail"
 ]
 
 TENANT_APPS = [
