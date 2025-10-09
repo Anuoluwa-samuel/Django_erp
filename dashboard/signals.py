@@ -38,7 +38,7 @@ def send_registration_notifications(sender, instance, created, **kwargs):
             settings.DEFAULT_FROM_EMAIL,
             [settings.DEFAULT_FROM_EMAIL],
             html_message=message_admin,
-            fail_silently=True,  # Prevents crashing if email fails
+            fail_silently=False,  # Prevents crashing if email fails
         )
 
         # --- 2️⃣ Notify User ---
@@ -53,7 +53,7 @@ def send_registration_notifications(sender, instance, created, **kwargs):
                 settings.DEFAULT_FROM_EMAIL,
                 [instance.email],
                 html_message=message_user,
-                fail_silently=True,
+                fail_silently=False,
             )
 
         # --- 3️⃣ Real-time Notifications (django-notifications-hq) ---
