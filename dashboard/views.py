@@ -48,3 +48,12 @@ def register(request):
     else:
         form = RegistrationForm()
     return render(request, "registration/register.html", {"form": form})
+
+def terms_of_service(request):
+    return render(request, 'terms.html')
+
+def privacy_policy(request):
+    return render(request, 'privacy.html')
+
+def cookies_policy(request):
+    return render(request, 'cookies.html')
