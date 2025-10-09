@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import dashboard_view, login_view, logout_view, register
+from .views import dashboard_view, login_view, logout_view, register, terms_of_service, privacy_policy, 
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
