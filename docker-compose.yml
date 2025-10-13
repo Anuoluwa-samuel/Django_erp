@@ -9,11 +9,11 @@ services:
     environment:
       - PGDATABASE=railway
       - PGUSER=postgres
-      - PGPASSWORD=svcJVwfcDNFOfzlxwFkRzCdZPxFnRnAm
-      - PGHOST=switchyard.proxy.rlwy.net
-      - PGPORT=32449
+      - PGPASSWORD=gvnEctLRqTYMViLUylnYdeibdKHrlUXg
+      - PGHOST=centerbeam.proxy.rlwy.net
+      - PGPORT=18589
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
 volumes:
-  postgres-data: 
+  postgres-data:
